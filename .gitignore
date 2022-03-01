@@ -1,0 +1,18 @@
+# To ignore a previously committed file use
+# git rm --cached <filename>
+# https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+
+# Steps to remove file or directory from repo
+# git rm -r --cached File-or-FolderName
+# git commit -m "Removed folder from repository"
+# 
+
+#
+decode_as_entries
+heuristic_protos
+io_graphs
+recent
+recent_common
+hosts
+## Ignore company specific profiles that start with ZZ-
+ZZ-*
