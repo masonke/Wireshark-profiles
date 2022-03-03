@@ -9,4 +9,4 @@ grep -rl "#gui.window_title: " . --exclude-dir=.git | xargs gsed -i=.bak 's/#gui
 
 
 copy dfilter_buttons file to all sub directories
-find . -name "dfilter_buttons" -exec cp -l "dfilter_buttons" "{}" \;
+find . \( -type d -name .git -prune \) -name "dfilter_buttons" -exec cp -l "dfilter_buttons" "{}" \;
