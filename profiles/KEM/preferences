@@ -85,7 +85,7 @@ gui.recent_display_filter_entries.max: 30
 # %S = a conditional separator (" - ") that only shows when surrounded by variables with values or static text
 # %V = version info
 # A string
-#gui.window_title: 
+gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
 
 # Custom window title to be prepended to the existing title
 # %F = file path of the capture file
@@ -496,7 +496,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.233.151 any eq 0, deny tcp any eq 0 host 10.189.233.151, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::c9cf:1acc:2d2a:78dd any eq 0, deny tcp any eq 0 host fe80::c9cf:1acc:2d2a:78dd, deny tcp host fe80::45e1:535b:661a:553e any eq 0, deny tcp any eq 0 host fe80::45e1:535b:661a:553e, deny tcp host fe80::bc81:48ff:fe63:69eb any eq 0, deny tcp any eq 0 host fe80::bc81:48ff:fe63:69eb, deny tcp host fe80::bc81:48ff:fe63:69eb any eq 0, deny tcp any eq 0 host fe80::bc81:48ff:fe63:69eb, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:51e2:eb52:1ecb:22ba any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:51e2:eb52:1ecb:22ba, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::849:7956:3926:cdd9 any eq 0, deny tcp any eq 0 host fe80::849:7956:3926:cdd9, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.230.187 any eq 0, deny tcp any eq 0 host 10.189.230.187, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::c9cf:1acc:2d2a:78dd any eq 0, deny tcp any eq 0 host fe80::c9cf:1acc:2d2a:78dd, deny tcp host fe80::45e1:535b:661a:553e any eq 0, deny tcp any eq 0 host fe80::45e1:535b:661a:553e, deny tcp host fe80::bc81:48ff:fe63:69eb any eq 0, deny tcp any eq 0 host fe80::bc81:48ff:fe63:69eb, deny tcp host fe80::bc81:48ff:fe63:69eb any eq 0, deny tcp any eq 0 host fe80::bc81:48ff:fe63:69eb, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:2d3a:2afb:99ec:7690 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:2d3a:2afb:99ec:7690, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::849:7956:3926:cdd9 any eq 0, deny tcp any eq 0 host fe80::849:7956:3926:cdd9, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -564,7 +564,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.233.151 or host fe80::aede:48ff:fe00:1122 or host fe80::c9cf:1acc:2d2a:78dd or host fe80::45e1:535b:661a:553e or host fe80::bc81:48ff:fe63:69eb or host fe80::bc81:48ff:fe63:69eb or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:51e2:eb52:1ecb:22ba or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::849:7956:3926:cdd9 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.230.187 or host fe80::aede:48ff:fe00:1122 or host fe80::c9cf:1acc:2d2a:78dd or host fe80::45e1:535b:661a:553e or host fe80::bc81:48ff:fe63:69eb or host fe80::bc81:48ff:fe63:69eb or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:2d3a:2afb:99ec:7690 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::849:7956:3926:cdd9 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string

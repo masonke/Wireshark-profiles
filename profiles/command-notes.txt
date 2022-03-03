@@ -1,0 +1,12 @@
+Change 
+	#gui.window_title: 
+to
+	gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
+in all preferences files
+
+grep -rl "#gui.window_title: " . --exclude-dir=.git | xargs gsed -i=.bak 's/#gui.window_title: /gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V/g'
+
+
+
+copy dfilter_buttons file to all sub directories
+find . -name "dfilter_buttons" -exec cp -l "dfilter_buttons" "{}" \;

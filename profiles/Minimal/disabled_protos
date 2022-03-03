@@ -1660,8 +1660,6 @@ netanalyzer
 netbios
 netdfs
 netdump
-netlink-netfilter
-netlink
 netmon_802_11
 netmon_event
 netmon_filter
@@ -2095,7 +2093,6 @@ skinny
 skype
 slarp
 slimp3
-sll
 sm
 smb
 mailslot
@@ -2118,7 +2115,6 @@ sndcp
 sndcpxid
 snmp
 snort
-netlink-sock_diag
 socks
 solaredge
 someip

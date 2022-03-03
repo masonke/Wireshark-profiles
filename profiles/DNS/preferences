@@ -85,7 +85,7 @@ gui.recent_display_filter_entries.max: 30
 # %S = a conditional separator (" - ") that only shows when surrounded by variables with values or static text
 # %V = version info
 # A string
-#gui.window_title: 
+gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
 
 # Custom window title to be prepended to the existing title
 # %F = file path of the capture file

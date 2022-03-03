@@ -14,5 +14,6 @@ io_graphs
 recent
 recent_common
 hosts
+*.bak
 ## Ignore company specific profiles that start with ZZ-
 ZZ-*
