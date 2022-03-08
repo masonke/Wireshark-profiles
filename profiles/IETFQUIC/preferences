@@ -270,7 +270,7 @@ gui.column.format:
 
 # Font name for packet list, protocol tree, and hex dump panes. (Qt)
 # A string
-gui.qt.font_name: Consolas,18,-1,5,50,0,0,0,0,0,Regular
+gui.qt.font_name: Inconsolata Nerd Font,16,-1,5,57,0,0,0,0,0,Medium
 
 ####### User Interface: Layout ########
 
