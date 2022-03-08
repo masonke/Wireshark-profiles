@@ -10,3 +10,8 @@ grep -rl "#gui.window_title: " . --exclude-dir=.git | xargs gsed -i=.bak 's/#gui
 
 copy dfilter_buttons file to all sub directories
 find . \( -type d -name .git -prune \) -name "dfilter_buttons" -exec cp -l "dfilter_buttons" "{}" \;
+
+Change the fonts to one style
+
+grep -rl "gui.qt.font_name:" . --exclude-dir=.git | xargs gsed -i.bak 's/gui.qt.font_name:.*/gui.qt.font_name: Inconsolata Nerd Font,16,-1,5,57,0,0,0,0,0,Medium/g'
+
