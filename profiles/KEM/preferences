@@ -290,9 +290,13 @@ gui.column.format:
 	"#sack", "%Cus:tcp.options.sack.count:0:R",
 	"dsack", "%Cus:tcp.options.sack.dsack:0:R",
 	"DupAck2", "%Cus:tcp.analysis.duplicate_ack_frame:0:R",
+	"Byte L Push", "%Cus:tcp.analysis.push_bytes_sent:0:R",
 	"Com", "%Cus:pkt_comment:0:R",
 	"Flags", "%Cus:tcp.flags:0:R",
+	"RTO", "%Cus:tcp.analysis.rto:0:R",
 	"TCP Flags", "%Cus:tcp.flags.str:0:R",
+	"F5 Keylog", "%Cus:f5ethtrailer.tls.keylog:0:R",
+	"Flow ID or peer flow ID", "%Cus:f5ethtrailer.anyflowid:0:R",
 	"Info", "%i"
 
 ####### User Interface: Font ########
@@ -496,7 +500,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.230.187 any eq 0, deny tcp any eq 0 host 10.189.230.187, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::c9cf:1acc:2d2a:78dd any eq 0, deny tcp any eq 0 host fe80::c9cf:1acc:2d2a:78dd, deny tcp host fe80::45e1:535b:661a:553e any eq 0, deny tcp any eq 0 host fe80::45e1:535b:661a:553e, deny tcp host fe80::bc81:48ff:fe63:69eb any eq 0, deny tcp any eq 0 host fe80::bc81:48ff:fe63:69eb, deny tcp host fe80::bc81:48ff:fe63:69eb any eq 0, deny tcp any eq 0 host fe80::bc81:48ff:fe63:69eb, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:2d3a:2afb:99ec:7690 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:2d3a:2afb:99ec:7690, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::849:7956:3926:cdd9 any eq 0, deny tcp any eq 0 host fe80::849:7956:3926:cdd9, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.251.20 any eq 0, deny tcp any eq 0 host 10.189.251.20, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::59f4:63a5:dd67:e792 any eq 0, deny tcp any eq 0 host fe80::59f4:63a5:dd67:e792, deny tcp host fe80::b5d7:f24b:9c33:a9b7 any eq 0, deny tcp any eq 0 host fe80::b5d7:f24b:9c33:a9b7, deny tcp host fe80::85f3:cce6:8a7a:54b3 any eq 0, deny tcp any eq 0 host fe80::85f3:cce6:8a7a:54b3, deny tcp host fe80::9c84:15ff:fe99:9bd9 any eq 0, deny tcp any eq 0 host fe80::9c84:15ff:fe99:9bd9, deny tcp host fe80::9c84:15ff:fe99:9bd9 any eq 0, deny tcp any eq 0 host fe80::9c84:15ff:fe99:9bd9, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:449b:306c:4200:90b3 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:449b:306c:4200:90b3, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::1002:99d3:807f:7606 any eq 0, deny tcp any eq 0 host fe80::1002:99d3:807f:7606, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -564,7 +568,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.230.187 or host fe80::aede:48ff:fe00:1122 or host fe80::c9cf:1acc:2d2a:78dd or host fe80::45e1:535b:661a:553e or host fe80::bc81:48ff:fe63:69eb or host fe80::bc81:48ff:fe63:69eb or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:2d3a:2afb:99ec:7690 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::849:7956:3926:cdd9 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.251.20 or host fe80::aede:48ff:fe00:1122 or host fe80::59f4:63a5:dd67:e792 or host fe80::b5d7:f24b:9c33:a9b7 or host fe80::85f3:cce6:8a7a:54b3 or host fe80::9c84:15ff:fe99:9bd9 or host fe80::9c84:15ff:fe99:9bd9 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:449b:306c:4200:90b3 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::1002:99d3:807f:7606 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
