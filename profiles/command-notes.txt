@@ -8,8 +8,9 @@ grep -rl "#gui.window_title: " . --exclude-dir=.git | xargs gsed -i=.bak 's/#gui
 
 
 
-copy dfilter_buttons file to all sub directories
+copy a file to all sub directories
 find . \( -type d -name .git -prune \) -name "dfilter_buttons" -exec cp -l "dfilter_buttons" "{}" \;
+find . \( -type d -name .git -prune \) -name "io_graphs" -exec cp -l "io_graphs" "{}" \;
 
 Change the fonts to one style
 
