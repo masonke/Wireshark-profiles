@@ -9,12 +9,12 @@ grep -rl "#gui.window_title: " . --exclude-dir=.git | xargs gsed -i=.bak 's/#gui
 
 
 copy a file to all sub directories
-find . -name "dfilter_buttons" -print
-find . -name "dfilter_buttons" -exec chmod 664 '{}' \;
-find . -name "dfilter_buttons" -exec cp -f "dfilter_buttons" "{}" \;
+find . -not \( -path ".git/*" -prune \) -name "dfilter_buttons" -print
+find . -not \( -path ".git/*" -prune \) -name "dfilter_buttons" -exec chmod 664 '{}' \;
+find . -not \( -path ".git/*" -prune \) -name "dfilter_buttons" -exec cp -f "dfilter_buttons" "{}" \;
 
 Make hard links
-find . -name "colorfilters" -exec cp -lf "colorfilters" "{}" \;
+find . -not \( -path ".git/*" -prune \) -name "colorfilters" -exec cp -lf "colorfilters" "{}" \;
 
 
 Change the fonts to one style
