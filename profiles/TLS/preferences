@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 3.6.2.
+# Configuration file for Wireshark 3.6.3.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -244,7 +244,7 @@ gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.nxtseq:0:R,%Cus:tcp.ack:0:R,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.id:0:R,%Cus:tcp.flags.str:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:tcp.stream:0:R,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.nxtseq:0:R,%Cus:tcp.ack:0:R,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.id:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -475,7 +475,7 @@ gui.show_file_load_time.enabled: TRUE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.226.73 any eq 0, deny tcp any eq 0 host 10.189.226.73, deny tcp host fe80::b79e:fa0b:c879:a6f4 any eq 0, deny tcp any eq 0 host fe80::b79e:fa0b:c879:a6f4, deny tcp host fe80::1253:b934:2637:dd3b any eq 0, deny tcp any eq 0 host fe80::1253:b934:2637:dd3b, deny tcp host fe80::a63e:d29d:c6b5:e096 any eq 0, deny tcp any eq 0 host fe80::a63e:d29d:c6b5:e096, deny tcp host fe80::1891:21ff:fe9d:f099 any eq 0, deny tcp any eq 0 host fe80::1891:21ff:fe9d:f099, deny tcp host fe80::1891:21ff:fe9d:f099 any eq 0, deny tcp any eq 0 host fe80::1891:21ff:fe9d:f099, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:908e:e696:74d7:dcea any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:908e:e696:74d7:dcea, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::cb9:678f:55fc:96ca any eq 0, deny tcp any eq 0 host fe80::cb9:678f:55fc:96ca, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.245.190 any eq 0, deny tcp any eq 0 host 10.189.245.190, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::b79e:fa0b:c879:a6f4 any eq 0, deny tcp any eq 0 host fe80::b79e:fa0b:c879:a6f4, deny tcp host fe80::1253:b934:2637:dd3b any eq 0, deny tcp any eq 0 host fe80::1253:b934:2637:dd3b, deny tcp host fe80::a63e:d29d:c6b5:e096 any eq 0, deny tcp any eq 0 host fe80::a63e:d29d:c6b5:e096, deny tcp host fe80::1891:21ff:fe9d:f099 any eq 0, deny tcp any eq 0 host fe80::1891:21ff:fe9d:f099, deny tcp host fe80::1891:21ff:fe9d:f099 any eq 0, deny tcp any eq 0 host fe80::1891:21ff:fe9d:f099, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::cb9:678f:55fc:96ca any eq 0, deny tcp any eq 0 host fe80::cb9:678f:55fc:96ca, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -543,7 +543,7 @@ gui.show_file_load_time.enabled: TRUE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.226.73 or host fe80::b79e:fa0b:c879:a6f4 or host fe80::1253:b934:2637:dd3b or host fe80::a63e:d29d:c6b5:e096 or host fe80::1891:21ff:fe9d:f099 or host fe80::1891:21ff:fe9d:f099 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:908e:e696:74d7:dcea or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::cb9:678f:55fc:96ca or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.245.190 or host fe80::aede:48ff:fe00:1122 or host fe80::b79e:fa0b:c879:a6f4 or host fe80::1253:b934:2637:dd3b or host fe80::a63e:d29d:c6b5:e096 or host fe80::1891:21ff:fe9d:f099 or host fe80::1891:21ff:fe9d:f099 or host 192.168.132.120 or host fe80::cb9:678f:55fc:96ca or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
