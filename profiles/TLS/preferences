@@ -176,12 +176,12 @@ gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
 
 # Background color for an active selected item
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
-#gui.active_frame.bg: cbe8ff
+gui.active_frame.bg: 73fdff
 
 # Color style for an active selected item
 # One of: DEFAULT, FLAT, GRADIENT
 # (case-insensitive).
-#gui.active_frame.style: DEFAULT
+gui.active_frame.style: GRADIENT
 
 # Foreground color for an inactive selected item
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
@@ -189,12 +189,12 @@ gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
 
 # Background color for an inactive selected item
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
-#gui.inactive_frame.bg: efefef
+gui.inactive_frame.bg: 73fdff
 
 # Color style for an inactive selected item
 # One of: DEFAULT, FLAT, GRADIENT
 # (case-insensitive).
-#gui.inactive_frame.style: DEFAULT
+gui.inactive_frame.style: GRADIENT
 
 # Color preferences for a marked frame
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
@@ -244,7 +244,7 @@ gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:tcp.stream:0:R,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.nxtseq:0:R,%Cus:tcp.ack:0:R,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.id:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.nxtseq:0:R,%Cus:tcp.ack:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:ip.id:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -263,23 +263,26 @@ gui.column.format:
 	"SEQ#", "%Cus:tcp.seq:0:R",
 	"NextSEQ", "%Cus:tcp.nxtseq:0:R",
 	"ACK#", "%Cus:tcp.ack:0:R",
-	"ACKfor", "%Cus:tcp.analysis.acks_frame:0:R",
+	"ACK For", "%Cus:tcp.analysis.acks_frame:0:R",
 	"WIN Size", "%Cus:tcp.window_size_value:0:R",
 	"CumBytes", "%B",
 	"Bytes in flight", "%Cus:tcp.analysis.bytes_in_flight:0:R",
 	"Bytes since PSH", "%Cus:tcp.analysis.push_bytes_sent:0:R",
+	"TTL", "%Cus:ip.ttl:0:R",
 	"IP ID", "%Cus:ip.id:0:R",
 	"PcbDevNo", "%Cus:nstrace.pdevno:0:R",
 	"Linked PcbDevNo", "%Cus:nstrace.l_pdevno:0:R",
 	"TCP Flags", "%Cus:tcp.flags.str:0:R",
 	"Pubkey Length", "%Cus:tls.handshake.ys_len:0:R",
+	"Flags", "%Cus:tcp.flags:0:R",
+	"Ack Time", "%Cus:tcp.analysis.ack_rtt:0:R",
 	"Info", "%i"
 
 ####### User Interface: Font ########
 
 # Font name for packet list, protocol tree, and hex dump panes. (Qt)
 # A string
-gui.qt.font_name: Inconsolata Nerd Font,14,-1,5,57,0,0,0,0,0,Medium
+gui.qt.font_name: Inconsolata Nerd Font,18,-1,5,57,0,0,0,0,0,Medium
 
 ####### User Interface: Layout ########
 
@@ -476,7 +479,7 @@ gui.show_file_load_time.enabled: TRUE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.245.190 any eq 0, deny tcp any eq 0 host 10.189.245.190, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::b79e:fa0b:c879:a6f4 any eq 0, deny tcp any eq 0 host fe80::b79e:fa0b:c879:a6f4, deny tcp host fe80::1253:b934:2637:dd3b any eq 0, deny tcp any eq 0 host fe80::1253:b934:2637:dd3b, deny tcp host fe80::a63e:d29d:c6b5:e096 any eq 0, deny tcp any eq 0 host fe80::a63e:d29d:c6b5:e096, deny tcp host fe80::1891:21ff:fe9d:f099 any eq 0, deny tcp any eq 0 host fe80::1891:21ff:fe9d:f099, deny tcp host fe80::1891:21ff:fe9d:f099 any eq 0, deny tcp any eq 0 host fe80::1891:21ff:fe9d:f099, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:b8bc:37a0:feda:ea64 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:b8bc:37a0:feda:ea64, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::cb9:678f:55fc:96ca any eq 0, deny tcp any eq 0 host fe80::cb9:678f:55fc:96ca, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.253.122 any eq 0, deny tcp any eq 0 host 10.189.253.122, deny tcp host fe80::f176:dbf3:4412:cd20 any eq 0, deny tcp any eq 0 host fe80::f176:dbf3:4412:cd20, deny tcp host fe80::7973:cebd:552f:ff8e any eq 0, deny tcp any eq 0 host fe80::7973:cebd:552f:ff8e, deny tcp host fe80::9ae8:57cd:7851:dd95 any eq 0, deny tcp any eq 0 host fe80::9ae8:57cd:7851:dd95, deny tcp host fe80::d054:bff:fe2f:fe36 any eq 0, deny tcp any eq 0 host fe80::d054:bff:fe2f:fe36, deny tcp host fe80::d054:bff:fe2f:fe36 any eq 0, deny tcp any eq 0 host fe80::d054:bff:fe2f:fe36, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::10dd:2d46:4a63:35a9 any eq 0, deny tcp any eq 0 host fe80::10dd:2d46:4a63:35a9, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -544,7 +547,7 @@ gui.show_file_load_time.enabled: TRUE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.245.190 or host fe80::aede:48ff:fe00:1122 or host fe80::b79e:fa0b:c879:a6f4 or host fe80::1253:b934:2637:dd3b or host fe80::a63e:d29d:c6b5:e096 or host fe80::1891:21ff:fe9d:f099 or host fe80::1891:21ff:fe9d:f099 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:b8bc:37a0:feda:ea64 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::cb9:678f:55fc:96ca or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.253.122 or host fe80::f176:dbf3:4412:cd20 or host fe80::7973:cebd:552f:ff8e or host fe80::9ae8:57cd:7851:dd95 or host fe80::d054:bff:fe2f:fe36 or host fe80::d054:bff:fe2f:fe36 or host 192.168.132.120 or host fe80::10dd:2d46:4a63:35a9 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
