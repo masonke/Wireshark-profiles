@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.nxtseq:0:R,%Cus:tcp.ack:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:ip.id:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:ip.id:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.initial_rtt:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -252,15 +252,16 @@ gui.column.format:
 	"No.", "%m",
 	"Time", "%t",
 	"Time Delta", "%Gt",
-	"TCP Delta", "%Cus:tcp.time_delta:0:R",
+	"TCP ST Delta", "%Cus:tcp.time_delta:0:R",
+	"ID", "%Cus:vlan.id:0:R",
 	"Source", "%s",
 	"Destination", "%d",
 	"Protocol", "%p",
 	"StrmIndx", "%Cus:tcp.stream:0:R",
 	"Length", "%L",
-	"TCP-LEN", "%Cus:tcp.len:0:R",
 	"D Port", "%Cus:tcp.dstport:0:R",
 	"SEQ#", "%Cus:tcp.seq:0:R",
+	"TCP-LEN", "%Cus:tcp.len:0:R",
 	"NextSEQ", "%Cus:tcp.nxtseq:0:R",
 	"ACK#", "%Cus:tcp.ack:0:R",
 	"ACK For", "%Cus:tcp.analysis.acks_frame:0:R",
@@ -276,13 +277,14 @@ gui.column.format:
 	"Pubkey Length", "%Cus:tls.handshake.ys_len:0:R",
 	"Flags", "%Cus:tcp.flags:0:R",
 	"Ack Time", "%Cus:tcp.analysis.ack_rtt:0:R",
+	"iRTT", "%Cus:tcp.analysis.initial_rtt:0:R",
 	"Info", "%i"
 
 ####### User Interface: Font ########
 
 # Font name for packet list, protocol tree, and hex dump panes. (Qt)
 # A string
-gui.qt.font_name: Inconsolata Nerd Font,18,-1,5,57,0,0,0,0,0,Medium
+gui.qt.font_name: Inconsolata Nerd Font,16,-1,5,57,0,0,0,0,0,Medium
 
 ####### User Interface: Layout ########
 
@@ -369,7 +371,7 @@ gui.show_file_load_time.enabled: TRUE
 
 # Capture in promiscuous mode?
 # TRUE or FALSE (case-insensitive)
-#capture.prom_mode: TRUE
+capture.prom_mode: FALSE
 
 # Interface capture filter (Ex: en0(tcp),en1(udp),...)
 # A string
@@ -381,7 +383,7 @@ gui.show_file_load_time.enabled: TRUE
 
 # Update packet list in real time during capture?
 # TRUE or FALSE (case-insensitive)
-#capture.real_time_update: TRUE
+capture.real_time_update: FALSE
 
 # Don't automatically load capture interfaces on startup
 # TRUE or FALSE (case-insensitive)
@@ -393,7 +395,7 @@ gui.show_file_load_time.enabled: TRUE
 
 # Scroll packet list during capture?
 # TRUE or FALSE (case-insensitive)
-#capture.auto_scroll: TRUE
+capture.auto_scroll: FALSE
 
 # Show capture information dialog while capturing?
 # TRUE or FALSE (case-insensitive)
@@ -5112,7 +5114,7 @@ nameres.network_name: TRUE
 
 # Whether out-of-order segments should be buffered and reordered before passing it to a subdissector. To use this option you must also enable "Allow subdissector to reassemble TCP streams".
 # TRUE or FALSE (case-insensitive)
-#tcp.reassemble_out_of_order: FALSE
+tcp.reassemble_out_of_order: TRUE
 
 # Make the TCP dissector analyze TCP sequence numbers to find and flag segment retransmissions, missing segments and RTT
 # TRUE or FALSE (case-insensitive)
