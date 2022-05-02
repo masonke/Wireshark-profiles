@@ -1,0 +1,1 @@
+"TNS Connect String" (tns.type == 1) || (tns.type == 11) || (tns.type == 2)

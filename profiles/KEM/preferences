@@ -85,7 +85,7 @@ gui.recent_display_filter_entries.max: 30
 # %S = a conditional separator (" - ") that only shows when surrounded by variables with values or static text
 # %V = version info
 # A string
-gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
+gui.window_title: Path %F
 
 # Custom window title to be prepended to the existing title
 # %F = file path of the capture file
@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:vlan.id_name:0:R,%Cus:tcp.time_delta||udp.time_delta:0:R,%Cus:eth.src:0:R,%Cus:ip.id:0:R,%Cus:tls.record.length:0:R,%Cus:ip.ttl:0:R,%Cus:tcp.seq_raw:0:R,%Cus:tcp.seq:0:R,%Cus:tcp.nxtseq:0:R,%Cus:tcp.len||udp.length:0:R,%Cus:tcp.ack:0:R,%uS,%uD,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.window_size:0:R,%B,%Cus:http.request.method:0:R,%Cus:http.request_number:0:R,%Cus:http.response.code:0:R,%Cus:http.content_length:0:R,%Cus:http.content_type:0:R,%Cus:http.request.uri:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:http.time:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:dns.qry.name:0:R,%Cus:frame.interface_name:0:R,%Cus:radius.time:0:R,%Cus:tcp.options.sack.count:0:R,%Cus:tcp.options.sack.dsack:0:R,%Cus:tcp.analysis.duplicate_ack_frame:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:pkt_comment:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.rto:0:R,%Cus:tcp.flags.str:0:R,%Cus:f5ethtrailer.tls.keylog:0:R,%Cus:f5ethtrailer.anyflowid:0:R,%Cus:tls.handshake.ciphersuite:0:R
+gui.column.hidden: %Cus:tcp.time_delta||udp.time_delta:0:R,%Cus:eth.src_resolved:0:R,%Cus:eth.dst_resolved:0:R,%Cus:frame.len:0:R,%p,%Cus:tls.record.length:0:R,%Cus:tcp.seq_raw:0:R,%uS,%uD,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.window_size:0:R,%B,%Cus:http.request.method:0:R,%Cus:http.request_number:0:R,%Cus:http.response.code:0:R,%Cus:http.content_length:0:R,%Cus:http.content_type:0:R,%Cus:http.request.uri:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:http.time:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:dns.qry.name:0:R,%Cus:frame.interface_name:0:R,%Cus:radius.time:0:R,%Cus:tcp.options.sack.count:0:R,%Cus:tcp.options.sack.dsack:0:R,%Cus:tcp.analysis.duplicate_ack_frame:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:pkt_comment:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.rto:0:R,%Cus:tcp.flags.str:0:R,%Cus:f5ethtrailer.tls.keylog:0:R,%Cus:f5ethtrailer.anyflowid:0:R,%Cus:tls.handshake.ciphersuite:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -254,19 +254,21 @@ gui.column.format:
 	"D_Time_d", "%Gt",
 	"Vlan", "%Cus:vlan.id_name:0:R",
 	"L4 D Time", "%Cus:tcp.time_delta||udp.time_delta:0:R",
+	"Source Mac", "%Cus:eth.src_resolved:0:R",
+	"Dest Mac", "%Cus:eth.dst_resolved:0:R",
 	"Source", "%s",
-	"Source", "%Cus:eth.src:0:R",
 	"Dest", "%d",
 	"Frame len", "%Cus:frame.len:0:R",
+	"IP Len", "%Cus:ip.len:0:R",
 	"ip.id", "%Cus:ip.id:0:R",
 	"Proto", "%p",
 	"L4 Strm#", "%Cus:tcp.stream||udp.stream:0:R",
 	"TLS-Len", "%Cus:tls.record.length:0:R",
 	"TTL", "%Cus:ip.ttl:0:R",
 	"raw seq", "%Cus:tcp.seq_raw:0:R",
+	"L4Len", "%Cus:tcp.len||udp.length:0:R",
 	"Seq", "%Cus:tcp.seq:0:R",
 	"Next Seq", "%Cus:tcp.nxtseq:0:R",
-	"L4Len", "%Cus:tcp.len||udp.length:0:R",
 	"Ack", "%Cus:tcp.ack:0:R",
 	"SPort", "%uS",
 	"DPort", "%uD",
@@ -501,7 +503,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.245.190 any eq 0, deny tcp any eq 0 host 10.189.245.190, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::b79e:fa0b:c879:a6f4 any eq 0, deny tcp any eq 0 host fe80::b79e:fa0b:c879:a6f4, deny tcp host fe80::1253:b934:2637:dd3b any eq 0, deny tcp any eq 0 host fe80::1253:b934:2637:dd3b, deny tcp host fe80::a63e:d29d:c6b5:e096 any eq 0, deny tcp any eq 0 host fe80::a63e:d29d:c6b5:e096, deny tcp host fe80::1891:21ff:fe9d:f099 any eq 0, deny tcp any eq 0 host fe80::1891:21ff:fe9d:f099, deny tcp host fe80::1891:21ff:fe9d:f099 any eq 0, deny tcp any eq 0 host fe80::1891:21ff:fe9d:f099, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:a8b1:58a5:c19a:ebea any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:a8b1:58a5:c19a:ebea, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::cb9:678f:55fc:96ca any eq 0, deny tcp any eq 0 host fe80::cb9:678f:55fc:96ca, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.196.244 any eq 0, deny tcp any eq 0 host 10.189.196.244, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::5041:5be:3199:fb78 any eq 0, deny tcp any eq 0 host fe80::5041:5be:3199:fb78, deny tcp host fe80::1fea:663a:afe9:ece0 any eq 0, deny tcp any eq 0 host fe80::1fea:663a:afe9:ece0, deny tcp host fe80::24e8:fdff:fe1d:ec93 any eq 0, deny tcp any eq 0 host fe80::24e8:fdff:fe1d:ec93, deny tcp host fe80::24e8:fdff:fe1d:ec93 any eq 0, deny tcp any eq 0 host fe80::24e8:fdff:fe1d:ec93, deny tcp host 2600:8805:4800:d:8124:3705:c0e9:714c any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:8124:3705:c0e9:714c, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::4bd:52f7:2a32:9f6e any eq 0, deny tcp any eq 0 host fe80::4bd:52f7:2a32:9f6e, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -569,7 +571,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.245.190 or host fe80::aede:48ff:fe00:1122 or host fe80::b79e:fa0b:c879:a6f4 or host fe80::1253:b934:2637:dd3b or host fe80::a63e:d29d:c6b5:e096 or host fe80::1891:21ff:fe9d:f099 or host fe80::1891:21ff:fe9d:f099 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:a8b1:58a5:c19a:ebea or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::cb9:678f:55fc:96ca or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.196.244 or host fe80::aede:48ff:fe00:1122 or host fe80::5041:5be:3199:fb78 or host fe80::1fea:663a:afe9:ece0 or host fe80::24e8:fdff:fe1d:ec93 or host fe80::24e8:fdff:fe1d:ec93 or host 2600:8805:4800:d:8124:3705:c0e9:714c or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::4bd:52f7:2a32:9f6e or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -2221,7 +2223,7 @@ f5ethtrailer.info_type: Brief in/out only
 
 # Whether or not 'packet size limited during capture' message in shown in Info column.
 # TRUE or FALSE (case-insensitive)
-#frame.disable_packet_size_limited_in_summary: FALSE
+frame.disable_packet_size_limited_in_summary: TRUE
 
 # Whether the FireWall-1 summary line should be shown in the protocol tree
 # TRUE or FALSE (case-insensitive)
@@ -5147,7 +5149,7 @@ tcp.reassemble_out_of_order: TRUE
 # Make the TCP dissector use this scaling factor for streams where the signalled scaling factor is not visible in the capture
 # One of: Not known, 0 (no scaling), 1 (multiply by 2), 2 (multiply by 4), 3 (multiply by 8), 4 (multiply by 16), 5 (multiply by 32), 6 (multiply by 64), 7 (multiply by 128), 8 (multiply by 256), 9 (multiply by 512), 10 (multiply by 1024), 11 (multiply by 2048), 12 (multiply by 4096), 13 (multiply by 8192), 14 (multiply by 16384)
 # (case-insensitive).
-tcp.default_window_scaling: 7 (multiply by 128)
+#tcp.default_window_scaling: Not known
 
 # Make the TCP dissector track the number on un-ACKed bytes of data are in flight per packet. To use this option you must also enable "Analyze TCP sequence numbers". This takes a lot of memory but allows you to track how much data are in flight at a time and graphing it in io-graphs
 # TRUE or FALSE (case-insensitive)
@@ -5175,7 +5177,7 @@ tcp.ignore_tcp_timestamps: TRUE
 
 # Do not call any subdissectors for Retransmitted or OutOfOrder segments
 # TRUE or FALSE (case-insensitive)
-#tcp.no_subdissector_on_error: TRUE
+tcp.no_subdissector_on_error: FALSE
 
 # Assume TCP Experimental Options (253, 254) have a Magic Number and use it for dissection
 # TRUE or FALSE (case-insensitive)

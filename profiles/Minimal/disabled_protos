@@ -133,7 +133,6 @@ lcp.opt.auth_protocol_bytes
 auto_rp
 autosar-nm
 wlancap
-avsp
 awdl
 awdl_data
 ax25
@@ -159,7 +158,6 @@ bencode
 bfcp
 bfd
 bfd_echo
-bgp
 bicc
 bicc_mst
 bitcoin
@@ -169,7 +167,6 @@ blip
 bluecom
 bluetooth
 bmc
-bmp
 brdwlk
 bofl
 bootparams
@@ -640,7 +637,6 @@ ccsds
 ccsrl
 wmx.cdma
 cdma2k
-cdp
 cds_clerkserver
 cds_solicit
 cdt
@@ -650,9 +646,7 @@ ceph
 cesoeth
 pwcesopsn
 cfdp
-cflow
 cfm
-cfp
 cgmp
 chargen
 chargingase
@@ -700,7 +694,6 @@ cms
 cnip
 coap
 collectd
-communityid
 componentstatusprotocol
 lcp.opt.compound_frames
 lcp.opt.cobs
@@ -756,17 +749,12 @@ dct2000
 ddp
 ddtp
 dec_dna
-dec_stp
 dect
 pppmuxcp.opt.def_pid
 ccp.opt.deflate
 its.message.denm
 its.message.denmv1
 devicenet
-dhcp
-dhcpfo
-dhcpv6
-dhcpv6.bulk_leasequery
 diameter
 diameter.3gpp
 dicom
@@ -1206,7 +1194,6 @@ hpteam
 hsms
 hsr
 hsr_prp_supervision
-hsrp
 http
 http2
 http3
@@ -1279,7 +1266,6 @@ ieee802a
 ifcp
 igap
 igmp
-igrp
 ilmi
 ilp
 imap
@@ -1754,7 +1740,6 @@ oscore
 osi
 osmo_trxc
 osmo_trxd
-ospf
 ouch
 ccp.opt_oui
 owamp.test
@@ -2143,7 +2128,6 @@ its.message.ssem
 ssh
 ssp
 sss
-sstp
 ssyncp
 ccp.opt.stac
 ccp.opt.stac_ascend
@@ -2155,7 +2139,6 @@ stat
 statnotify
 stcsig
 steam_ihs_discovery
-stp
 stt
 stun
 sua
@@ -2328,7 +2311,6 @@ vpp-metadata
 vpp-opaque
 vpp-opaque2
 vpp-trace
-vrrp
 vsip
 vsncp
 vsock

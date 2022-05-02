@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:ip.id:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.initial_rtt:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:ip.id:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -481,7 +481,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.253.122 any eq 0, deny tcp any eq 0 host 10.189.253.122, deny tcp host fe80::f176:dbf3:4412:cd20 any eq 0, deny tcp any eq 0 host fe80::f176:dbf3:4412:cd20, deny tcp host fe80::7973:cebd:552f:ff8e any eq 0, deny tcp any eq 0 host fe80::7973:cebd:552f:ff8e, deny tcp host fe80::9ae8:57cd:7851:dd95 any eq 0, deny tcp any eq 0 host fe80::9ae8:57cd:7851:dd95, deny tcp host fe80::d054:bff:fe2f:fe36 any eq 0, deny tcp any eq 0 host fe80::d054:bff:fe2f:fe36, deny tcp host fe80::d054:bff:fe2f:fe36 any eq 0, deny tcp any eq 0 host fe80::d054:bff:fe2f:fe36, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::10dd:2d46:4a63:35a9 any eq 0, deny tcp any eq 0 host fe80::10dd:2d46:4a63:35a9, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.241.68 any eq 0, deny tcp any eq 0 host 10.189.241.68, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::f176:dbf3:4412:cd20 any eq 0, deny tcp any eq 0 host fe80::f176:dbf3:4412:cd20, deny tcp host fe80::7973:cebd:552f:ff8e any eq 0, deny tcp any eq 0 host fe80::7973:cebd:552f:ff8e, deny tcp host fe80::9ae8:57cd:7851:dd95 any eq 0, deny tcp any eq 0 host fe80::9ae8:57cd:7851:dd95, deny tcp host fe80::d054:bff:fe2f:fe36 any eq 0, deny tcp any eq 0 host fe80::d054:bff:fe2f:fe36, deny tcp host fe80::d054:bff:fe2f:fe36 any eq 0, deny tcp any eq 0 host fe80::d054:bff:fe2f:fe36, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:6cb1:6c6a:127b:c998 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:6cb1:6c6a:127b:c998, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::10dd:2d46:4a63:35a9 any eq 0, deny tcp any eq 0 host fe80::10dd:2d46:4a63:35a9, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -549,7 +549,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.253.122 or host fe80::f176:dbf3:4412:cd20 or host fe80::7973:cebd:552f:ff8e or host fe80::9ae8:57cd:7851:dd95 or host fe80::d054:bff:fe2f:fe36 or host fe80::d054:bff:fe2f:fe36 or host 192.168.132.120 or host fe80::10dd:2d46:4a63:35a9 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.241.68 or host fe80::aede:48ff:fe00:1122 or host fe80::f176:dbf3:4412:cd20 or host fe80::7973:cebd:552f:ff8e or host fe80::9ae8:57cd:7851:dd95 or host fe80::d054:bff:fe2f:fe36 or host fe80::d054:bff:fe2f:fe36 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:6cb1:6c6a:127b:c998 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::10dd:2d46:4a63:35a9 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
