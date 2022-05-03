@@ -23,11 +23,11 @@
 
 # The max. number of items in the open recent files list
 # A decimal number
-gui.recent_files_count.max: 30
+#gui.recent_files_count.max: 10
 
 # The max. number of entries in the display filter list
 # A decimal number
-gui.recent_display_filter_entries.max: 30
+#gui.recent_display_filter_entries.max: 10
 
 # Directory to start in when opening File Open dialog.
 # A path to a directory
@@ -85,7 +85,7 @@ gui.recent_display_filter_entries.max: 30
 # %S = a conditional separator (" - ") that only shows when surrounded by variables with values or static text
 # %V = version info
 # A string
-gui.window_title: Path %F
+gui.window_title: Profile: %P %S Path %F %S
 
 # Custom window title to be prepended to the existing title
 # %F = file path of the capture file
@@ -162,7 +162,7 @@ gui.window_title: Path %F
 # 8 = External Capture,
 # 9 = Virtual
 # A string
-gui.interfaces_hidden_types: 8
+#gui.interfaces_hidden_types: 
 
 # Enables automatic updates for IO Graph
 # TRUE or FALSE (case-insensitive)
@@ -176,7 +176,7 @@ gui.interfaces_hidden_types: 8
 
 # Background color for an active selected item
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
-gui.active_frame.bg: 00fdff
+gui.active_frame.bg: 73fdff
 
 # Color style for an active selected item
 # One of: DEFAULT, FLAT, GRADIENT
@@ -244,62 +244,40 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta||udp.time_delta:0:R,%Cus:eth.src_resolved:0:R,%Cus:eth.dst_resolved:0:R,%Cus:frame.len:0:R,%p,%Cus:tls.record.length:0:R,%Cus:tcp.seq_raw:0:R,%uS,%uD,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.window_size:0:R,%B,%Cus:http.request.method:0:R,%Cus:http.request_number:0:R,%Cus:http.response.code:0:R,%Cus:http.content_length:0:R,%Cus:http.content_type:0:R,%Cus:http.request.uri:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:http.time:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:dns.qry.name:0:R,%Cus:frame.interface_name:0:R,%Cus:radius.time:0:R,%Cus:tcp.options.sack.count:0:R,%Cus:tcp.options.sack.dsack:0:R,%Cus:tcp.analysis.duplicate_ack_frame:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:pkt_comment:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.rto:0:R,%Cus:tcp.flags.str:0:R,%Cus:f5ethtrailer.tls.keylog:0:R,%Cus:f5ethtrailer.anyflowid:0:R,%Cus:tls.handshake.ciphersuite:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.initial_rtt:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
 gui.column.format: 
 	"No.", "%m",
 	"Time", "%t",
-	"D_Time_d", "%Gt",
-	"Vlan", "%Cus:vlan.id_name:0:R",
-	"L4 D Time", "%Cus:tcp.time_delta||udp.time_delta:0:R",
-	"Source Mac", "%Cus:eth.src_resolved:0:R",
-	"Dest Mac", "%Cus:eth.dst_resolved:0:R",
+	"Time Delta", "%Gt",
+	"TCP ST Delta", "%Cus:tcp.time_delta:0:R",
+	"ID", "%Cus:vlan.id:0:R",
 	"Source", "%s",
-	"Dest", "%d",
-	"Frame len", "%Cus:frame.len:0:R",
-	"IP Len", "%Cus:ip.len:0:R",
-	"ip.id", "%Cus:ip.id:0:R",
-	"Proto", "%p",
-	"L4 Strm#", "%Cus:tcp.stream||udp.stream:0:R",
-	"TLS-Len", "%Cus:tls.record.length:0:R",
+	"Destination", "%d",
+	"Protocol", "%p",
+	"StrmIndx", "%Cus:tcp.stream:0:R",
+	"Length", "%L",
+	"D Port", "%Cus:tcp.dstport:0:R",
+	"SEQ#", "%Cus:tcp.seq:0:R",
+	"TCP-LEN", "%Cus:tcp.len:0:R",
+	"NextSEQ", "%Cus:tcp.nxtseq:0:R",
+	"ACK#", "%Cus:tcp.ack:0:R",
+	"ACK For", "%Cus:tcp.analysis.acks_frame:0:R",
+	"WIN Size", "%Cus:tcp.window_size_value:0:R",
+	"CumBytes", "%B",
+	"Bytes in flight", "%Cus:tcp.analysis.bytes_in_flight:0:R",
+	"Bytes since PSH", "%Cus:tcp.analysis.push_bytes_sent:0:R",
 	"TTL", "%Cus:ip.ttl:0:R",
-	"raw seq", "%Cus:tcp.seq_raw:0:R",
-	"L4Len", "%Cus:tcp.len||udp.length:0:R",
-	"Seq", "%Cus:tcp.seq:0:R",
-	"Next Seq", "%Cus:tcp.nxtseq:0:R",
-	"Ack", "%Cus:tcp.ack:0:R",
-	"SPort", "%uS",
-	"DPort", "%uD",
-	"Ack To", "%Cus:tcp.analysis.acks_frame:0:R",
-	"ACK RTT", "%Cus:tcp.analysis.ack_rtt:0:R",
-	"BiF", "%Cus:tcp.analysis.bytes_in_flight:0:R",
-	"Calc Win", "%Cus:tcp.window_size:0:R",
-	"C Bytes", "%B",
-	"R Method", "%Cus:http.request.method:0:R",
-	"Request number", "%Cus:http.request_number:0:R",
-	"Status Code", "%Cus:http.response.code:0:R",
-	"Content length", "%Cus:http.content_length:0:R",
-	"Content-Type", "%Cus:http.content_type:0:R",
-	"Request URI", "%Cus:http.request.uri:0:R",
-	"Pubkey Length", "%Cus:tls.handshake.ys_len:0:R",
-	"Time since request", "%Cus:http.time:0:R",
-	"iRTT", "%Cus:tcp.analysis.initial_rtt:0:R",
-	"Name", "%Cus:dns.qry.name:0:R",
-	"Interface name", "%Cus:frame.interface_name:0:R",
-	"Time from request", "%Cus:radius.time:0:R",
-	"#sack", "%Cus:tcp.options.sack.count:0:R",
-	"dsack", "%Cus:tcp.options.sack.dsack:0:R",
-	"DupAck2", "%Cus:tcp.analysis.duplicate_ack_frame:0:R",
-	"Byte L Push", "%Cus:tcp.analysis.push_bytes_sent:0:R",
-	"Com", "%Cus:pkt_comment:0:R",
-	"Flags", "%Cus:tcp.flags:0:R",
-	"RTO", "%Cus:tcp.analysis.rto:0:R",
+	"IP ID", "%Cus:ip.id:0:R",
+	"PcbDevNo", "%Cus:nstrace.pdevno:0:R",
+	"Linked PcbDevNo", "%Cus:nstrace.l_pdevno:0:R",
 	"TCP Flags", "%Cus:tcp.flags.str:0:R",
-	"F5 Keylog", "%Cus:f5ethtrailer.tls.keylog:0:R",
-	"Flow ID or peer flow ID", "%Cus:f5ethtrailer.anyflowid:0:R",
-	"Cipher Suite", "%Cus:tls.handshake.ciphersuite:0:R",
+	"Pubkey Length", "%Cus:tls.handshake.ys_len:0:R",
+	"Flags", "%Cus:tcp.flags:0:R",
+	"Ack Time", "%Cus:tcp.analysis.ack_rtt:0:R",
+	"iRTT", "%Cus:tcp.analysis.initial_rtt:0:R",
 	"Info", "%i"
 
 ####### User Interface: Font ########
@@ -361,11 +339,11 @@ gui.show_file_load_time.enabled: TRUE
 
 # Default capture device
 # A string
-capture.device: utun4
+#capture.device: 
 
 # Interface link-layer header types (Ex: en0(1),en1(143),...)
 # A string
-capture.devices_linktypes: ciscodump(147),randpkt(147),sshdump(147),udpdump(252)
+#capture.devices_linktypes: 
 
 # Interface descriptions (Ex: eth0(eth0 descr),eth1(eth1 descr),...)
 # A string
@@ -373,7 +351,7 @@ capture.devices_linktypes: ciscodump(147),randpkt(147),sshdump(147),udpdump(252)
 
 # Hide interface? (Ex: eth0,eth3,...)
 # A string
-capture.devices_hide: lo0
+#capture.devices_hide: 
 
 # By default, capture in monitor mode on interface? (Ex: eth0,eth3,...)
 # A string
@@ -381,15 +359,15 @@ capture.devices_hide: lo0
 
 # Interface buffer size (Ex: en0(1),en1(143),...)
 # A string
-capture.devices_buffersize: en0(2),p2p0(2),awdl0(2),llw0(2),utun0(2),utun1(2),utun2(2),utun3(2),utun4(2),en6(2),en1(2),en2(2),en3(2),en4(2),gif0(2),stf0(2),bridge0(2),en9(2),ciscodump(2),randpkt(2),sshdump(2),udpdump(2)
+#capture.devices_buffersize: 
 
 # Interface snap length (Ex: en0(65535),en1(1430),...)
 # A string
-capture.devices_snaplen: en0:0(262144),p2p0:0(262144),awdl0:0(262144),llw0:0(262144),utun0:0(262144),utun1:0(262144),utun2:0(262144),utun3:0(262144),utun4:0(262144),en6:0(262144),en1:0(262144),en2:0(262144),en3:0(262144),en4:0(262144),gif0:0(262144),stf0:0(262144),bridge0:0(262144),en9:0(262144),ciscodump:0(262144),randpkt:0(262144),sshdump:0(262144),udpdump:0(262144)
+#capture.devices_snaplen: 
 
 # Interface promiscuous mode (Ex: en0(0),en1(1),...)
 # A string
-capture.devices_pmode: en0(1),p2p0(1),awdl0(1),llw0(1),utun0(1),utun1(1),utun2(1),utun3(1),utun4(1),en6(1),en1(1),en2(1),en3(1),en4(1),gif0(1),stf0(1),bridge0(1),en9(1),ciscodump(1),randpkt(1),sshdump(1),udpdump(1)
+#capture.devices_pmode: 
 
 # Capture in promiscuous mode?
 # TRUE or FALSE (case-insensitive)
@@ -503,7 +481,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.196.244 any eq 0, deny tcp any eq 0 host 10.189.196.244, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::5041:5be:3199:fb78 any eq 0, deny tcp any eq 0 host fe80::5041:5be:3199:fb78, deny tcp host fe80::1fea:663a:afe9:ece0 any eq 0, deny tcp any eq 0 host fe80::1fea:663a:afe9:ece0, deny tcp host fe80::24e8:fdff:fe1d:ec93 any eq 0, deny tcp any eq 0 host fe80::24e8:fdff:fe1d:ec93, deny tcp host fe80::24e8:fdff:fe1d:ec93 any eq 0, deny tcp any eq 0 host fe80::24e8:fdff:fe1d:ec93, deny tcp host 2600:8805:4800:d:8124:3705:c0e9:714c any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:8124:3705:c0e9:714c, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::4bd:52f7:2a32:9f6e any eq 0, deny tcp any eq 0 host fe80::4bd:52f7:2a32:9f6e, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.203.49 any eq 0, deny tcp any eq 0 host 10.189.203.49, deny tcp host fe80::acf8:3e21:675d:1745 any eq 0, deny tcp any eq 0 host fe80::acf8:3e21:675d:1745, deny tcp host fe80::f56:1528:823b:ebae any eq 0, deny tcp any eq 0 host fe80::f56:1528:823b:ebae, deny tcp host fe80::4073:eed1:bcb8:779e any eq 0, deny tcp any eq 0 host fe80::4073:eed1:bcb8:779e, deny tcp host fe80::88c:44ff:fe71:ced6 any eq 0, deny tcp any eq 0 host fe80::88c:44ff:fe71:ced6, deny tcp host fe80::88c:44ff:fe71:ced6 any eq 0, deny tcp any eq 0 host fe80::88c:44ff:fe71:ced6, deny tcp host 2600:8805:4800:d:a480:c2fa:6c12:aa36 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:a480:c2fa:6c12:aa36, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::8c4:b1a7:cb56:be90 any eq 0, deny tcp any eq 0 host fe80::8c4:b1a7:cb56:be90, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -571,7 +549,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.196.244 or host fe80::aede:48ff:fe00:1122 or host fe80::5041:5be:3199:fb78 or host fe80::1fea:663a:afe9:ece0 or host fe80::24e8:fdff:fe1d:ec93 or host fe80::24e8:fdff:fe1d:ec93 or host 2600:8805:4800:d:8124:3705:c0e9:714c or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::4bd:52f7:2a32:9f6e or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.203.49 or host fe80::acf8:3e21:675d:1745 or host fe80::f56:1528:823b:ebae or host fe80::4073:eed1:bcb8:779e or host fe80::88c:44ff:fe71:ced6 or host fe80::88c:44ff:fe71:ced6 or host 2600:8805:4800:d:a480:c2fa:6c12:aa36 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::8c4:b1a7:cb56:be90 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -621,7 +599,7 @@ nameres.network_name: TRUE
 
 # Resolve VLAN IDs to network names from the preferences "vlans" file. Format of the file is: "ID<Tab>Name". One line per VLAN, e.g.: 1 Management
 # TRUE or FALSE (case-insensitive)
-nameres.vlan_name: TRUE
+#nameres.vlan_name: FALSE
 
 # Resolve SS7 Point Codes to node names from the profiles "ss7pcs" file. Format of the file is: "Network_Indicator<Dash>PC_Decimal<Tab>Name". One line per Point Code, e.g.: 2-1234 MyPointCode1
 # TRUE or FALSE (case-insensitive)
@@ -639,11 +617,11 @@ nameres.vlan_name: TRUE
 
 # Display all hidden protocol items in the packet list.
 # TRUE or FALSE (case-insensitive)
-protocols.display_hidden_proto_items: TRUE
+#protocols.display_hidden_proto_items: FALSE
 
 # Display all byte fields with a space character between each byte in the packet list.
 # TRUE or FALSE (case-insensitive)
-protocols.display_byte_fields_with_spaces: TRUE
+#protocols.display_byte_fields_with_spaces: FALSE
 
 # Look for dissectors that left some bytes undecoded.
 # TRUE or FALSE (case-insensitive)
@@ -2098,7 +2076,7 @@ protocols.display_byte_fields_with_spaces: TRUE
 # In/out only removes slot/tmm information.  Brief shortens the string to >S/T (for in) or <S/T (for out).  See "Brief in/out characters" below.
 # One of: None, Full, In/out only, Brief, Brief in/out only
 # (case-insensitive).
-f5ethtrailer.info_type: Brief in/out only
+#f5ethtrailer.info_type: Full
 
 # A string specifying the characters to use to represent "in" and "out" in the brief summary.  The default is "><" ('>' for in and '<' for out).  If this is not set or is less than two characters, the default is used.  If it is longer than two characters, the extra characters are ignored.
 # A string
@@ -2223,7 +2201,7 @@ f5ethtrailer.info_type: Brief in/out only
 
 # Whether or not 'packet size limited during capture' message in shown in Info column.
 # TRUE or FALSE (case-insensitive)
-frame.disable_packet_size_limited_in_summary: TRUE
+#frame.disable_packet_size_limited_in_summary: FALSE
 
 # Whether the FireWall-1 summary line should be shown in the protocol tree
 # TRUE or FALSE (case-insensitive)
@@ -2519,7 +2497,7 @@ frame.disable_packet_size_limited_in_summary: TRUE
 
 # SSL/TLS Ports range
 # A string denoting an positive integer range (e.g., "1-20,30-40")
-http.tls.port: 443,8443,9443,7443
+#http.tls.port: 443
 
 # The UDP port for RROCE messages (default 4791)
 # A decimal number
@@ -2696,7 +2674,7 @@ http.tls.port: 443,8443,9443,7443
 
 # Whether the IPv4 type-of-service field should be decoded as a Differentiated Services field (see RFC2474/RFC2475)
 # TRUE or FALSE (case-insensitive)
-ip.decode_tos_as_diffserv: FALSE
+#ip.decode_tos_as_diffserv: TRUE
 
 # Whether fragmented IPv4 datagrams should be reassembled
 # TRUE or FALSE (case-insensitive)
@@ -2716,7 +2694,7 @@ ip.decode_tos_as_diffserv: FALSE
 
 # Whether to look up IP addresses in each MaxMind database we have loaded
 # TRUE or FALSE (case-insensitive)
-ip.use_geoip: FALSE
+#ip.use_geoip: TRUE
 
 # Whether to interpret the originally reserved flag as security flag
 # TRUE or FALSE (case-insensitive)
@@ -2736,7 +2714,7 @@ ip.use_geoip: FALSE
 
 # Whether to look up IPv6 addresses in each MaxMind database we have loaded
 # TRUE or FALSE (case-insensitive)
-ipv6.use_geoip: FALSE
+#ipv6.use_geoip: TRUE
 
 # Check that all RPL Source Routed packets conform to RFC 6554 and do not visit a node more than once
 # TRUE or FALSE (case-insensitive)
@@ -2748,7 +2726,7 @@ ipv6.use_geoip: FALSE
 
 # Whether to display IPv6 extension headers as a separate protocol or a sub-protocol of the IPv6 packet
 # TRUE or FALSE (case-insensitive)
-ipv6.exthdr_under_root_protocol_tree: TRUE
+#ipv6.exthdr_under_root_protocol_tree: FALSE
 
 # If enabled the Length field in octets will be hidden
 # TRUE or FALSE (case-insensitive)
@@ -4832,11 +4810,11 @@ ipv6.exthdr_under_root_protocol_tree: TRUE
 
 # Whether the export object functionality will take the full path file name as file identifier
 # TRUE or FALSE (case-insensitive)
-smb.eosmb_take_name_as_fid: TRUE
+#smb.eosmb_take_name_as_fid: FALSE
 
 # Whether the export object functionality will take the full path file name as file identifier
 # TRUE or FALSE (case-insensitive)
-smb2.eosmb2_take_name_as_fid: TRUE
+#smb2.eosmb2_take_name_as_fid: FALSE
 
 # Whether the dissector should reassemble Named Pipes over SMB2 commands
 # TRUE or FALSE (case-insensitive)
@@ -5165,7 +5143,7 @@ tcp.bif_seq_based: TRUE
 
 # Try to decode a packet using an heuristic sub-dissector before using a sub-dissector registered to a specific port
 # TRUE or FALSE (case-insensitive)
-tcp.try_heuristic_first: TRUE
+#tcp.try_heuristic_first: FALSE
 
 # Do not place the TCP Timestamps in the summary line
 # TRUE or FALSE (case-insensitive)
@@ -5390,7 +5368,7 @@ tcp.dissect_experimental_options_with_magic: FALSE
 
 # Set this to match to the TCP subdissector reassembly setting
 # TRUE or FALSE (case-insensitive)
-transum.reassembly: FALSE
+#transum.reassembly: TRUE
 
 # Add and remove ports numbers separated by commas
 # Ranges are supported e.g. 25,80,2000-3000,5432
@@ -5405,7 +5383,7 @@ transum.reassembly: FALSE
 # Set this to discard any packet in the direction client to service,
 # with a 1-byte payload of 0x00 and the ACK flag set
 # TRUE or FALSE (case-insensitive)
-transum.orphan_ka_discard: TRUE
+#transum.orphan_ka_discard: FALSE
 
 # RTE data will be added to the first request packet
 # TRUE or FALSE (case-insensitive)
@@ -5421,7 +5399,7 @@ transum.orphan_ka_discard: TRUE
 
 # RTE data will be added to the last response packet
 # TRUE or FALSE (case-insensitive)
-transum.rte_on_last_rsp: TRUE
+#transum.rte_on_last_rsp: FALSE
 
 # Set this only to troubleshoot problems
 # TRUE or FALSE (case-insensitive)
@@ -5741,4 +5719,4 @@ transum.rte_on_last_rsp: TRUE
 
 # When selected, the full name (including menu path) of the stats_tree plug-in is show in windows. If cleared the plug-in name is shown without menu path (only the part of the name after last '/' character.)
 # TRUE or FALSE (case-insensitive)
-statistics.st_sort_showfullname: TRUE
+#statistics.st_sort_showfullname: FALSE

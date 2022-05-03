@@ -85,7 +85,7 @@
 # %S = a conditional separator (" - ") that only shows when surrounded by variables with values or static text
 # %V = version info
 # A string
-gui.window_title: Profile: %P %S Path %F %S Wireshark Version: %V
+gui.window_title: Profile: %P %S Path %F %S
 
 # Custom window title to be prepended to the existing title
 # %F = file path of the capture file
@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:ip.id:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.initial_rtt:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -481,7 +481,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.241.68 any eq 0, deny tcp any eq 0 host 10.189.241.68, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::f176:dbf3:4412:cd20 any eq 0, deny tcp any eq 0 host fe80::f176:dbf3:4412:cd20, deny tcp host fe80::7973:cebd:552f:ff8e any eq 0, deny tcp any eq 0 host fe80::7973:cebd:552f:ff8e, deny tcp host fe80::9ae8:57cd:7851:dd95 any eq 0, deny tcp any eq 0 host fe80::9ae8:57cd:7851:dd95, deny tcp host fe80::d054:bff:fe2f:fe36 any eq 0, deny tcp any eq 0 host fe80::d054:bff:fe2f:fe36, deny tcp host fe80::d054:bff:fe2f:fe36 any eq 0, deny tcp any eq 0 host fe80::d054:bff:fe2f:fe36, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:6cb1:6c6a:127b:c998 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:6cb1:6c6a:127b:c998, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::10dd:2d46:4a63:35a9 any eq 0, deny tcp any eq 0 host fe80::10dd:2d46:4a63:35a9, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.203.49 any eq 0, deny tcp any eq 0 host 10.189.203.49, deny tcp host fe80::acf8:3e21:675d:1745 any eq 0, deny tcp any eq 0 host fe80::acf8:3e21:675d:1745, deny tcp host fe80::f56:1528:823b:ebae any eq 0, deny tcp any eq 0 host fe80::f56:1528:823b:ebae, deny tcp host fe80::4073:eed1:bcb8:779e any eq 0, deny tcp any eq 0 host fe80::4073:eed1:bcb8:779e, deny tcp host fe80::88c:44ff:fe71:ced6 any eq 0, deny tcp any eq 0 host fe80::88c:44ff:fe71:ced6, deny tcp host fe80::88c:44ff:fe71:ced6 any eq 0, deny tcp any eq 0 host fe80::88c:44ff:fe71:ced6, deny tcp host 2600:8805:4800:d:a480:c2fa:6c12:aa36 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:a480:c2fa:6c12:aa36, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::8c4:b1a7:cb56:be90 any eq 0, deny tcp any eq 0 host fe80::8c4:b1a7:cb56:be90, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -549,7 +549,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.241.68 or host fe80::aede:48ff:fe00:1122 or host fe80::f176:dbf3:4412:cd20 or host fe80::7973:cebd:552f:ff8e or host fe80::9ae8:57cd:7851:dd95 or host fe80::d054:bff:fe2f:fe36 or host fe80::d054:bff:fe2f:fe36 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:6cb1:6c6a:127b:c998 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::10dd:2d46:4a63:35a9 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.203.49 or host fe80::acf8:3e21:675d:1745 or host fe80::f56:1528:823b:ebae or host fe80::4073:eed1:bcb8:779e or host fe80::88c:44ff:fe71:ced6 or host fe80::88c:44ff:fe71:ced6 or host 2600:8805:4800:d:a480:c2fa:6c12:aa36 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::8c4:b1a7:cb56:be90 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -5135,7 +5135,7 @@ tcp.reassemble_out_of_order: TRUE
 
 # Evaluate BiF on actual sequence numbers or use the historical method based on payloads (default). This option has no effect if not used with "Track number of bytes in flight". 
 # TRUE or FALSE (case-insensitive)
-#tcp.bif_seq_based: FALSE
+tcp.bif_seq_based: TRUE
 
 # Calculate timestamps relative to the first frame and the previous frame in the tcp conversation
 # TRUE or FALSE (case-insensitive)
@@ -5147,7 +5147,7 @@ tcp.reassemble_out_of_order: TRUE
 
 # Do not place the TCP Timestamps in the summary line
 # TRUE or FALSE (case-insensitive)
-#tcp.ignore_tcp_timestamps: FALSE
+tcp.ignore_tcp_timestamps: TRUE
 
 # When interpreting ambiguous packets, give precedence to Fast Retransmission or OOO 
 # TRUE or FALSE (case-insensitive)
@@ -5155,11 +5155,11 @@ tcp.reassemble_out_of_order: TRUE
 
 # Do not call any subdissectors for Retransmitted or OutOfOrder segments
 # TRUE or FALSE (case-insensitive)
-#tcp.no_subdissector_on_error: TRUE
+tcp.no_subdissector_on_error: FALSE
 
 # Assume TCP Experimental Options (253, 254) have a Magic Number and use it for dissection
 # TRUE or FALSE (case-insensitive)
-#tcp.dissect_experimental_options_with_magic: TRUE
+tcp.dissect_experimental_options_with_magic: FALSE
 
 # Collect and store process information retrieved from IPFIX dissector
 # TRUE or FALSE (case-insensitive)
@@ -5339,7 +5339,7 @@ tcp.reassemble_out_of_order: TRUE
 # 
 # (All fields are in hex notation)
 # A path to a file
-tls.keylog_file: /Users/f8sz4ay/scratch/Cloudera SIS Capture 1 11-10-2021/nstrace.sslkeys
+#tls.keylog_file: 
 
 # Whether the TNS dissector should reassemble messages spanning multiple TCP segments. To use this option, you must also enable "Allow subdissectors to reassemble TCP streams" in the TCP protocol settings.
 # TRUE or FALSE (case-insensitive)
