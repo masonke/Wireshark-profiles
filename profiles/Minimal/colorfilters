@@ -21,6 +21,6 @@
 !@SMB@smb || nbss || nbns || nbipx || ipxsap || netbios@[65535,64250,39321][0,0,0]
 !@HTTP@http || tcp.port == 80@[36237,65535,32639][0,0,0]
 !@Routing@hsrp || eigrp || ospf || bgp || cdp || vrrp || gvrp || igmp || ismp@[65535,62451,54998][0,0,0]
-!@TCP@tcp@[59367,59110,65535][0,0,0]
+@dns@dns@[57568,64250,51914][0,0,0]
 !@UDP@udp@[28784,57568,65535][0,0,0]
 @Broadcast@eth[0] & 1@[65535,65535,65535][0,0,65535]
