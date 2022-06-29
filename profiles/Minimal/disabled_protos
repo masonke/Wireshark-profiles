@@ -70,6 +70,7 @@ ajns
 alt_beacon
 amf
 amp
+amqp
 amr
 amr_wb
 ams
@@ -152,8 +153,6 @@ bctp
 beep
 bencode
 bfcp
-bfd
-bfd_echo
 bicc
 bicc_mst
 bitcoin
@@ -162,10 +161,8 @@ bjnp
 blip
 bluecom
 bluetooth
-bmc
 brdwlk
 bofl
-bootparams
 bossvr
 bundle
 bpq
@@ -639,7 +636,6 @@ cemi
 ceph
 cesoeth
 pwcesopsn
-cfdp
 cfm
 chargen
 chargingase
@@ -664,7 +660,6 @@ cipmb
 cippccc
 cipssupervisor
 cipsvalidator
-cisco-erspan3-marker
 cl3
 cl3dcw
 clacse
@@ -684,6 +679,7 @@ cmpp
 cms
 cnip
 coap
+collectd
 componentstatusprotocol
 lcp.opt.compound_frames
 lcp.opt.cobs
@@ -1018,7 +1014,6 @@ ged125
 gelf
 pwmcw
 geneve
-genl
 gfp
 giop-gias
 gift
@@ -1305,7 +1300,6 @@ lin
 acf-lin
 data-text-lines
 bcp_ncp.opt.line_id
-marker
 bap.opt.link_disc
 lcp.opt.link_discrim_bytes
 lcp.opt.linkqualmon
@@ -1724,7 +1718,6 @@ rtcp
 rtitcp
 rtls
 rtmac
-netlink-route
 rtp
 ipcp.opt.iphc.rtp_compress
 rtpevent
@@ -1857,6 +1850,7 @@ tcpros
 tdma
 tdmoe
 tdmop
+tds
 ts2
 tecmp
 tecmp.payload
@@ -1883,6 +1877,7 @@ tivoconnect
 tkn4int
 tmode
 tnef
+tns
 tr
 tpcp
 tpkt
@@ -1953,6 +1948,9 @@ v5ua
 vcdu
 vdp21
 lcp.opt.vendor
+amqp.version.v0_10
+amqp.version.v0_9
+amqp.version.v1_0
 vicp
 vines
 vines_arp

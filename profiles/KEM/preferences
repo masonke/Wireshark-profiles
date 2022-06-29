@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 3.6.5.
+# Configuration file for Wireshark 3.6.6.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.initial_rtt:0:R
+gui.column.hidden: %Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.window_size:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -482,7 +482,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.195.83 any eq 0, deny tcp any eq 0 host 10.189.195.83, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::aa79:8802:17f1:5434 any eq 0, deny tcp any eq 0 host fe80::aa79:8802:17f1:5434, deny tcp host fe80::1187:8481:8960:f25 any eq 0, deny tcp any eq 0 host fe80::1187:8481:8960:f25, deny tcp host fe80::f750:4676:6bd2:5759 any eq 0, deny tcp any eq 0 host fe80::f750:4676:6bd2:5759, deny tcp host fe80::7093:82ff:fe54:bc26 any eq 0, deny tcp any eq 0 host fe80::7093:82ff:fe54:bc26, deny tcp host fe80::7093:82ff:fe54:bc26 any eq 0, deny tcp any eq 0 host fe80::7093:82ff:fe54:bc26, deny tcp host 2600:8805:4800:d:d52f:9bff:f4f0:986e any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:d52f:9bff:f4f0:986e, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::1c21:d500:442d:580f any eq 0, deny tcp any eq 0 host fe80::1c21:d500:442d:580f, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.206.10 any eq 0, deny tcp any eq 0 host 10.189.206.10, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::e339:122e:c1c8:9490 any eq 0, deny tcp any eq 0 host fe80::e339:122e:c1c8:9490, deny tcp host fe80::1873:cac4:ee3:11fe any eq 0, deny tcp any eq 0 host fe80::1873:cac4:ee3:11fe, deny tcp host fe80::3907:c352:2256:26a5 any eq 0, deny tcp any eq 0 host fe80::3907:c352:2256:26a5, deny tcp host fe80::d8ad:1aff:fe1c:8a58 any eq 0, deny tcp any eq 0 host fe80::d8ad:1aff:fe1c:8a58, deny tcp host fe80::d8ad:1aff:fe1c:8a58 any eq 0, deny tcp any eq 0 host fe80::d8ad:1aff:fe1c:8a58, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:cdf9:9fb8:97dc:31cf any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:cdf9:9fb8:97dc:31cf, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::73:e755:fcd4:f52e any eq 0, deny tcp any eq 0 host fe80::73:e755:fcd4:f52e, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -550,7 +550,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.195.83 or host fe80::aede:48ff:fe00:1122 or host fe80::aa79:8802:17f1:5434 or host fe80::1187:8481:8960:f25 or host fe80::f750:4676:6bd2:5759 or host fe80::7093:82ff:fe54:bc26 or host fe80::7093:82ff:fe54:bc26 or host 2600:8805:4800:d:d52f:9bff:f4f0:986e or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::1c21:d500:442d:580f or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.206.10 or host fe80::aede:48ff:fe00:1122 or host fe80::e339:122e:c1c8:9490 or host fe80::1873:cac4:ee3:11fe or host fe80::3907:c352:2256:26a5 or host fe80::d8ad:1aff:fe1c:8a58 or host fe80::d8ad:1aff:fe1c:8a58 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:cdf9:9fb8:97dc:31cf or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::73:e755:fcd4:f52e or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -618,11 +618,11 @@ nameres.network_name: TRUE
 
 # Display all hidden protocol items in the packet list.
 # TRUE or FALSE (case-insensitive)
-#protocols.display_hidden_proto_items: FALSE
+protocols.display_hidden_proto_items: TRUE
 
 # Display all byte fields with a space character between each byte in the packet list.
 # TRUE or FALSE (case-insensitive)
-#protocols.display_byte_fields_with_spaces: FALSE
+protocols.display_byte_fields_with_spaces: TRUE
 
 # Look for dissectors that left some bytes undecoded.
 # TRUE or FALSE (case-insensitive)
@@ -630,7 +630,7 @@ nameres.network_name: TRUE
 
 # Protocols may use things like VLAN ID or interface ID to narrow the potential for duplicate conversations. Currently ICMP and ICMPv6 use this preference to add VLAN ID to conversation tracking, and IPv4 uses this preference to take VLAN ID into account during reassembly
 # TRUE or FALSE (case-insensitive)
-#protocols.strict_conversation_tracking_heuristics: FALSE
+protocols.strict_conversation_tracking_heuristics: TRUE
 
 # Use a registered heuristic sub-dissector to decode the data payload
 # TRUE or FALSE (case-insensitive)
@@ -2981,7 +2981,7 @@ nameres.network_name: TRUE
 
 # No description
 # TRUE or FALSE (case-insensitive)
-#kafka.show_string_bytes_lengths: FALSE
+kafka.show_string_bytes_lengths: TRUE
 
 # Set the SCTP port for kNet messages
 # A decimal number
