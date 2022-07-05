@@ -162,7 +162,7 @@ gui.window_title: Profile: %P %S Path %F %S
 # 8 = External Capture,
 # 9 = Virtual
 # A string
-#gui.interfaces_hidden_types: 
+gui.interfaces_hidden_types: 8
 
 # Enables automatic updates for IO Graph
 # TRUE or FALSE (case-insensitive)
@@ -482,7 +482,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.206.10 any eq 0, deny tcp any eq 0 host 10.189.206.10, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::e339:122e:c1c8:9490 any eq 0, deny tcp any eq 0 host fe80::e339:122e:c1c8:9490, deny tcp host fe80::1873:cac4:ee3:11fe any eq 0, deny tcp any eq 0 host fe80::1873:cac4:ee3:11fe, deny tcp host fe80::3907:c352:2256:26a5 any eq 0, deny tcp any eq 0 host fe80::3907:c352:2256:26a5, deny tcp host fe80::d8ad:1aff:fe1c:8a58 any eq 0, deny tcp any eq 0 host fe80::d8ad:1aff:fe1c:8a58, deny tcp host fe80::d8ad:1aff:fe1c:8a58 any eq 0, deny tcp any eq 0 host fe80::d8ad:1aff:fe1c:8a58, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:cdf9:9fb8:97dc:31cf any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:cdf9:9fb8:97dc:31cf, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::73:e755:fcd4:f52e any eq 0, deny tcp any eq 0 host fe80::73:e755:fcd4:f52e, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.246.141 any eq 0, deny tcp any eq 0 host 10.189.246.141, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::24f3:f486:1bd8:e4bb any eq 0, deny tcp any eq 0 host fe80::24f3:f486:1bd8:e4bb, deny tcp host fe80::fb65:8c90:e1ef:f625 any eq 0, deny tcp any eq 0 host fe80::fb65:8c90:e1ef:f625, deny tcp host fe80::ca90:b903:9854:3b7b any eq 0, deny tcp any eq 0 host fe80::ca90:b903:9854:3b7b, deny tcp host fe80::7da1:4ef7:b9b5:1cac any eq 0, deny tcp any eq 0 host fe80::7da1:4ef7:b9b5:1cac, deny tcp host fe80::7043:87ff:fe63:84ec any eq 0, deny tcp any eq 0 host fe80::7043:87ff:fe63:84ec, deny tcp host fe80::7043:87ff:fe63:84ec any eq 0, deny tcp any eq 0 host fe80::7043:87ff:fe63:84ec, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:1f5:e917:23ee:f91c any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:1f5:e917:23ee:f91c, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::48:54cb:696e:ebb4 any eq 0, deny tcp any eq 0 host fe80::48:54cb:696e:ebb4, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -550,7 +550,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.206.10 or host fe80::aede:48ff:fe00:1122 or host fe80::e339:122e:c1c8:9490 or host fe80::1873:cac4:ee3:11fe or host fe80::3907:c352:2256:26a5 or host fe80::d8ad:1aff:fe1c:8a58 or host fe80::d8ad:1aff:fe1c:8a58 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:cdf9:9fb8:97dc:31cf or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::73:e755:fcd4:f52e or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.246.141 or host fe80::aede:48ff:fe00:1122 or host fe80::24f3:f486:1bd8:e4bb or host fe80::fb65:8c90:e1ef:f625 or host fe80::ca90:b903:9854:3b7b or host fe80::7da1:4ef7:b9b5:1cac or host fe80::7043:87ff:fe63:84ec or host fe80::7043:87ff:fe63:84ec or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:1f5:e917:23ee:f91c or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::48:54cb:696e:ebb4 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
