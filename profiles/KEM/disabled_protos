@@ -27,6 +27,7 @@ btgatt.uuid0x2ab8
 btgatt.uuid0x2abb
 btgatt.uuid0x2aaf
 btgatt.uuid0x2909
+communityid
 daap
 dpnss
 dpnss_link

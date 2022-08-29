@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 3.6.6.
+# Configuration file for Wireshark 3.6.7.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.window_size:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.ack:0:R,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.window_size:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -482,7 +482,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.246.141 any eq 0, deny tcp any eq 0 host 10.189.246.141, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::24f3:f486:1bd8:e4bb any eq 0, deny tcp any eq 0 host fe80::24f3:f486:1bd8:e4bb, deny tcp host fe80::fb65:8c90:e1ef:f625 any eq 0, deny tcp any eq 0 host fe80::fb65:8c90:e1ef:f625, deny tcp host fe80::ca90:b903:9854:3b7b any eq 0, deny tcp any eq 0 host fe80::ca90:b903:9854:3b7b, deny tcp host fe80::7da1:4ef7:b9b5:1cac any eq 0, deny tcp any eq 0 host fe80::7da1:4ef7:b9b5:1cac, deny tcp host fe80::7043:87ff:fe63:84ec any eq 0, deny tcp any eq 0 host fe80::7043:87ff:fe63:84ec, deny tcp host fe80::7043:87ff:fe63:84ec any eq 0, deny tcp any eq 0 host fe80::7043:87ff:fe63:84ec, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:1f5:e917:23ee:f91c any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:1f5:e917:23ee:f91c, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::48:54cb:696e:ebb4 any eq 0, deny tcp any eq 0 host fe80::48:54cb:696e:ebb4, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.201.167 any eq 0, deny tcp any eq 0 host 10.189.201.167, deny tcp host fe80::a59a:e736:dda6:841e any eq 0, deny tcp any eq 0 host fe80::a59a:e736:dda6:841e, deny tcp host fe80::3a3c:2d6:75d2:ce8a any eq 0, deny tcp any eq 0 host fe80::3a3c:2d6:75d2:ce8a, deny tcp host fe80::2cdf:d1ff:fe50:cfc8 any eq 0, deny tcp any eq 0 host fe80::2cdf:d1ff:fe50:cfc8, deny tcp host fe80::2cdf:d1ff:fe50:cfc8 any eq 0, deny tcp any eq 0 host fe80::2cdf:d1ff:fe50:cfc8, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:5053:6d8c:2b56:8825 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:5053:6d8c:2b56:8825, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::1c07:d5ae:7f9c:49e3 any eq 0, deny tcp any eq 0 host fe80::1c07:d5ae:7f9c:49e3, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -550,7 +550,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.246.141 or host fe80::aede:48ff:fe00:1122 or host fe80::24f3:f486:1bd8:e4bb or host fe80::fb65:8c90:e1ef:f625 or host fe80::ca90:b903:9854:3b7b or host fe80::7da1:4ef7:b9b5:1cac or host fe80::7043:87ff:fe63:84ec or host fe80::7043:87ff:fe63:84ec or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:1f5:e917:23ee:f91c or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::48:54cb:696e:ebb4 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.201.167 or host fe80::a59a:e736:dda6:841e or host fe80::3a3c:2d6:75d2:ce8a or host fe80::2cdf:d1ff:fe50:cfc8 or host fe80::2cdf:d1ff:fe50:cfc8 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:5053:6d8c:2b56:8825 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::1c07:d5ae:7f9c:49e3 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -576,7 +576,7 @@ capture.auto_scroll: FALSE
 
 # Resolve IPv4, IPv6, and IPX addresses into host names. The next set of check boxes determines how name resolution should be performed. If no other options are checked name resolution is made from Wireshark's host file and capture file name resolution blocks.
 # TRUE or FALSE (case-insensitive)
-nameres.network_name: TRUE
+#nameres.network_name: FALSE
 
 # Whether address/name pairs found in captured DNS packets should be used by Wireshark for name resolution.
 # TRUE or FALSE (case-insensitive)

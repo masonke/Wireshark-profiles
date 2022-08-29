@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 3.6.6.
+# Configuration file for Wireshark 3.6.7.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.flags:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.flags:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -484,7 +484,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.217.70 any eq 0, deny tcp any eq 0 host 10.189.217.70, deny tcp host fe80::1767:1a91:5a6d:701b any eq 0, deny tcp any eq 0 host fe80::1767:1a91:5a6d:701b, deny tcp host fe80::ef65:fbf7:cd79:8443 any eq 0, deny tcp any eq 0 host fe80::ef65:fbf7:cd79:8443, deny tcp host fe80::3184:69ae:ce46:f2c1 any eq 0, deny tcp any eq 0 host fe80::3184:69ae:ce46:f2c1, deny tcp host fe80::4837:f3ff:fefd:e7af any eq 0, deny tcp any eq 0 host fe80::4837:f3ff:fefd:e7af, deny tcp host fe80::4837:f3ff:fefd:e7af any eq 0, deny tcp any eq 0 host fe80::4837:f3ff:fefd:e7af, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:3ca1:f4fb:3eb6:a3d7 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:3ca1:f4fb:3eb6:a3d7, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::cef:29f4:68a7:6557 any eq 0, deny tcp any eq 0 host fe80::cef:29f4:68a7:6557, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.201.59 any eq 0, deny tcp any eq 0 host 10.189.201.59, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::e952:6481:a934:5664 any eq 0, deny tcp any eq 0 host fe80::e952:6481:a934:5664, deny tcp host fe80::f8f7:6953:af8a:6091 any eq 0, deny tcp any eq 0 host fe80::f8f7:6953:af8a:6091, deny tcp host fe80::4cfe:4f38:8c06:e4d5 any eq 0, deny tcp any eq 0 host fe80::4cfe:4f38:8c06:e4d5, deny tcp host fe80::88ac:29ff:fe65:3c98 any eq 0, deny tcp any eq 0 host fe80::88ac:29ff:fe65:3c98, deny tcp host fe80::88ac:29ff:fe65:3c98 any eq 0, deny tcp any eq 0 host fe80::88ac:29ff:fe65:3c98, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:9960:8577:3a6e:6379 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:9960:8577:3a6e:6379, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::c03:dbe0:4624:deb0 any eq 0, deny tcp any eq 0 host fe80::c03:dbe0:4624:deb0, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -552,7 +552,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.217.70 or host fe80::1767:1a91:5a6d:701b or host fe80::ef65:fbf7:cd79:8443 or host fe80::3184:69ae:ce46:f2c1 or host fe80::4837:f3ff:fefd:e7af or host fe80::4837:f3ff:fefd:e7af or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:3ca1:f4fb:3eb6:a3d7 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::cef:29f4:68a7:6557 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.201.59 or host fe80::aede:48ff:fe00:1122 or host fe80::e952:6481:a934:5664 or host fe80::f8f7:6953:af8a:6091 or host fe80::4cfe:4f38:8c06:e4d5 or host fe80::88ac:29ff:fe65:3c98 or host fe80::88ac:29ff:fe65:3c98 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:9960:8577:3a6e:6379 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::c03:dbe0:4624:deb0 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
