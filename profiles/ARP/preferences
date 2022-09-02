@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %q,%Cus:tcp.time_delta||udp.time_delta:0:R,%rhs,%hd,%uS,%uD,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:dns.qry.name:0:R,%Cus:tcp.completeness:0:R,%Cus:tcp.flags.str:0:R
+gui.column.hidden: %Cus:tcp.time_delta||udp.time_delta:0:R,%uS,%uD,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:dns.qry.name:0:R,%Cus:tcp.completeness:0:R,%Cus:tcp.flags.str:0:R,%Cus:hsrp2.group:0:R,%Cus:hsrp2.opcode:0:R,%Cus:hsrp2.virt_ip:0:R,%Cus:hsrp2.identifier:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -254,7 +254,6 @@ gui.column.format:
 	"RelTime", "%Cus:frame.time_relative:0:R",
 	"D_Time_d", "%Gt",
 	"Vlan ID", "%Cus:vlan.id:0:R",
-	"Vlan", "%q",
 	"L4 D Time", "%Cus:tcp.time_delta||udp.time_delta:0:R",
 	"Src IP", "%ns",
 	"Src Mac", "%rhs",
@@ -273,11 +272,11 @@ gui.column.format:
 	"TCP Flags", "%Cus:tcp.flags.str:0:R",
 	"Arp Sender IP", "%Cus:arp.src.proto_ipv4:0:R",
 	"Arp Target IP", "%Cus:arp.dst.proto_ipv4:0:R",
+	"arp Opcode", "%Cus:arp.opcode:0:R",
 	"hsrp grp", "%Cus:hsrp2.group:0:R",
 	"hsrp2 opcode", "%Cus:hsrp2.opcode:0:R",
 	"Hsrp Vip", "%Cus:hsrp2.virt_ip:0:R",
 	"hsrp id", "%Cus:hsrp2.identifier:0:R",
-	"arp Opcode", "%Cus:arp.opcode:0:R",
 	"Info", "%i"
 
 ####### User Interface: Font ########
