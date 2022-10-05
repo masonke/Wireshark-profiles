@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 3.6.7.
+# Configuration file for Wireshark 3.6.8.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.flags:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R
+gui.column.hidden: %Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -257,7 +257,7 @@ gui.column.format:
 	"Source", "%s",
 	"Destination", "%d",
 	"Protocol", "%p",
-	"StrmIndx", "%Cus:tcp.stream:0:R",
+	"StrmIndx", "%Cus:tcp.stream||udp.stream:0:R",
 	"Length", "%L",
 	"D Port", "%Cus:tcp.dstport:0:R",
 	"IP ID", "%Cus:ip.id:0:R",
@@ -277,7 +277,6 @@ gui.column.format:
 	"Pubkey Length", "%Cus:tls.handshake.ys_len:0:R",
 	"TLS Len", "%Cus:tls.record.length:0:R",
 	"iRTT", "%Cus:tcp.analysis.initial_rtt:0:R",
-	"Flags Hex", "%Cus:tcp.flags:0:R",
 	"Flags Str", "%Cus:tcp.flags.str:0:R",
 	"Version", "%Cus:tls.handshake.version:0:R",
 	"Version", "%Cus:tls.record.version:0:R",
@@ -484,7 +483,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.201.59 any eq 0, deny tcp any eq 0 host 10.189.201.59, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::e952:6481:a934:5664 any eq 0, deny tcp any eq 0 host fe80::e952:6481:a934:5664, deny tcp host fe80::f8f7:6953:af8a:6091 any eq 0, deny tcp any eq 0 host fe80::f8f7:6953:af8a:6091, deny tcp host fe80::4cfe:4f38:8c06:e4d5 any eq 0, deny tcp any eq 0 host fe80::4cfe:4f38:8c06:e4d5, deny tcp host fe80::88ac:29ff:fe65:3c98 any eq 0, deny tcp any eq 0 host fe80::88ac:29ff:fe65:3c98, deny tcp host fe80::88ac:29ff:fe65:3c98 any eq 0, deny tcp any eq 0 host fe80::88ac:29ff:fe65:3c98, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:9960:8577:3a6e:6379 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:9960:8577:3a6e:6379, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::c03:dbe0:4624:deb0 any eq 0, deny tcp any eq 0 host fe80::c03:dbe0:4624:deb0, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host fc00::6440:1 any eq 0, deny tcp any eq 0 host fc00::6440:1, deny tcp host fe80::8ae9:feff:fe78:d393 any eq 0, deny tcp any eq 0 host fe80::8ae9:feff:fe78:d393, deny tcp host 100.64.0.1 any eq 0, deny tcp any eq 0 host 100.64.0.1, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::2f82:246d:1b8f:7c5b any eq 0, deny tcp any eq 0 host fe80::2f82:246d:1b8f:7c5b, deny tcp host fe80::f02:1cce:ff89:38df any eq 0, deny tcp any eq 0 host fe80::f02:1cce:ff89:38df, deny tcp host fe80::14ae:51dc:2612:c1b0 any eq 0, deny tcp any eq 0 host fe80::14ae:51dc:2612:c1b0, deny tcp host fe80::4c9a:1ff:fef4:13dd any eq 0, deny tcp any eq 0 host fe80::4c9a:1ff:fef4:13dd, deny tcp host fe80::4c9a:1ff:fef4:13dd any eq 0, deny tcp any eq 0 host fe80::4c9a:1ff:fef4:13dd, deny tcp host 2600:8805:4800:3c:f8ee:968:1ed1:b78b any eq 0, deny tcp any eq 0 host 2600:8805:4800:3c:f8ee:968:1ed1:b78b, deny tcp host 2600:8805:4800:3c:1c6f:6e8a:9fd0:e2f3 any eq 0, deny tcp any eq 0 host 2600:8805:4800:3c:1c6f:6e8a:9fd0:e2f3, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::1030:7a6c:8161:27e1 any eq 0, deny tcp any eq 0 host fe80::1030:7a6c:8161:27e1, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -552,7 +551,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.201.59 or host fe80::aede:48ff:fe00:1122 or host fe80::e952:6481:a934:5664 or host fe80::f8f7:6953:af8a:6091 or host fe80::4cfe:4f38:8c06:e4d5 or host fe80::88ac:29ff:fe65:3c98 or host fe80::88ac:29ff:fe65:3c98 or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:9960:8577:3a6e:6379 or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::c03:dbe0:4624:deb0 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host fc00::6440:1 or host fe80::8ae9:feff:fe78:d393 or host 100.64.0.1 or host fe80::aede:48ff:fe00:1122 or host fe80::2f82:246d:1b8f:7c5b or host fe80::f02:1cce:ff89:38df or host fe80::14ae:51dc:2612:c1b0 or host fe80::4c9a:1ff:fef4:13dd or host fe80::4c9a:1ff:fef4:13dd or host 2600:8805:4800:3c:f8ee:968:1ed1:b78b or host 2600:8805:4800:3c:1c6f:6e8a:9fd0:e2f3 or host 192.168.132.120 or host fe80::1030:7a6c:8161:27e1 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -2009,7 +2008,7 @@ nameres.network_name: TRUE
 # Any - Any bytes after the payload up to the minimum ethernet frame size will be treated as padding.  Additional bytes will be considered trailer.
 # One of: Never, Zeros, Any
 # (case-insensitive).
-#eth.padding: Zeros
+eth.padding: Never
 
 # Some TAPs add a fixed length ethernet trailer at the end of the frame, but before the (optional) FCS. Make sure it gets interpreted correctly.
 # A decimal number
@@ -4619,7 +4618,7 @@ nameres.network_name: TRUE
 # A string
 #sccp.default_payload: 
 
-# Use all bytes for data payload. Overcome 255 bytes limit of SCCP stadard.  (Some tracing tool save information without DT1 segmentation of 255 bytes)
+# Use all bytes for data payload. Overcome 255 bytes limit of SCCP standard.  (Some tracing tools externally reassemble segmented data.)
 # TRUE or FALSE (case-insensitive)
 #sccp.dt1_ignore_length: FALSE
 

@@ -6,7 +6,7 @@
 @Window full@tcp.analysis.window_full@[65021,28527,53199][0,0,0]
 @SACK@tcp.options.sack_le@[65535,65535,65535][65535,0,32896]
 !@TCP_Win_Update@tcp.analysis.window_update@[63222,65021,65535][21074,14392,65535]
-!@Bad TCP@tcp.analysis.flags@[65535,65535,65535][32896,0,0]
+@Bad TCP@tcp.analysis.flags@[65535,65535,65535][32896,0,0]
 @TCP RST@tcp.flags.reset eq 1@[65535,0,0][65535,65535,65535]
 @TCP Fin@tcp.flags.fin== 1@[26214,65535,65535][0,0,0]
 @TCP SYN@tcp.flags.syn == 1@[0,65535,0][0,0,0]

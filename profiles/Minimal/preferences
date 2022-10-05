@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 3.6.7.
+# Configuration file for Wireshark 3.6.8.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -244,7 +244,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta||udp.time_delta:0:R,%Cus:eth.src:0:R,%Cus:frame.len:0:R,%Cus:ip.id:0:R,%p,%Cus:tls.record.length:0:R,%Cus:tcp.seq_raw:0:R,%uS,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.window_size:0:R,%B,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:dns.qry.name:0:R,%Cus:tcp.options.sack.count:0:R,%Cus:tcp.options.sack.dsack:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:tcp.analysis.duplicate_ack_frame:0:R,%Cus:tcp.completeness:0:R,%Cus:arp.src.proto_ipv4:0:R,%Cus:arp.dst.proto_ipv4:0:R
+gui.column.hidden: %Cus:tcp.time_delta||udp.time_delta:0:R,%Cus:eth.src:0:R,%Cus:frame.len:0:R,%Cus:ip.id:0:R,%p,%Cus:tls.record.length:0:R,%Cus:tcp.seq_raw:0:R,%uS,%uD,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.window_size:0:R,%B,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:dns.qry.name:0:R,%Cus:tcp.options.sack.count:0:R,%Cus:tcp.options.sack.dsack:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:tcp.analysis.duplicate_ack_frame:0:R,%Cus:tcp.completeness:0:R,%Cus:arp.src.proto_ipv4:0:R,%Cus:arp.dst.proto_ipv4:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -265,8 +265,8 @@ gui.column.format:
 	"L4 Strm#", "%Cus:tcp.stream||udp.stream:0:R",
 	"TTL", "%Cus:ip.ttl:0:R",
 	"Seq", "%Cus:tcp.seq:0:R",
-	"Next Seq", "%Cus:tcp.nxtseq:0:R",
 	"L4Len", "%Cus:tcp.len||udp.length:0:R",
+	"Next Seq", "%Cus:tcp.nxtseq:0:R",
 	"Ack", "%Cus:tcp.ack:0:R",
 	"SPort", "%uS",
 	"DPort", "%uD",
@@ -488,7 +488,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.227.78 any eq 0, deny tcp any eq 0 host 10.189.227.78, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::3d1d:4255:d128:ed56 any eq 0, deny tcp any eq 0 host fe80::3d1d:4255:d128:ed56, deny tcp host fe80::2da6:a7b9:af7f:909b any eq 0, deny tcp any eq 0 host fe80::2da6:a7b9:af7f:909b, deny tcp host fe80::5733:9f31:58e4:3d00 any eq 0, deny tcp any eq 0 host fe80::5733:9f31:58e4:3d00, deny tcp host fe80::14ce:c2ff:fec0:aa3d any eq 0, deny tcp any eq 0 host fe80::14ce:c2ff:fec0:aa3d, deny tcp host fe80::14ce:c2ff:fec0:aa3d any eq 0, deny tcp any eq 0 host fe80::14ce:c2ff:fec0:aa3d, deny tcp host 2600:8805:4800:d::1788 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d::1788, deny tcp host 2600:8805:4800:d:4cc2:e875:c6b5:91ba any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:4cc2:e875:c6b5:91ba, deny tcp host 2600:8805:4800:d:187b:31a3:37a5:82b9 any eq 0, deny tcp any eq 0 host 2600:8805:4800:d:187b:31a3:37a5:82b9, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::149d:8688:9e08:959b any eq 0, deny tcp any eq 0 host fe80::149d:8688:9e08:959b, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.204.219 any eq 0, deny tcp any eq 0 host 10.189.204.219, deny tcp host fe80::d5a1:84cc:1b23:33d5 any eq 0, deny tcp any eq 0 host fe80::d5a1:84cc:1b23:33d5, deny tcp host fe80::19f6:3881:bc4:e59b any eq 0, deny tcp any eq 0 host fe80::19f6:3881:bc4:e59b, deny tcp host fe80::8513:5a84:1a54:148f any eq 0, deny tcp any eq 0 host fe80::8513:5a84:1a54:148f, deny tcp host fe80::b8bb:e0ff:fe34:64ee any eq 0, deny tcp any eq 0 host fe80::b8bb:e0ff:fe34:64ee, deny tcp host fe80::b8bb:e0ff:fe34:64ee any eq 0, deny tcp any eq 0 host fe80::b8bb:e0ff:fe34:64ee, deny tcp host 2600:8805:4800:3c:d597:260b:a4de:1365 any eq 0, deny tcp any eq 0 host 2600:8805:4800:3c:d597:260b:a4de:1365, deny tcp host 2600:8805:4800:3c:1c6f:6e8a:9fd0:e2f3 any eq 0, deny tcp any eq 0 host 2600:8805:4800:3c:1c6f:6e8a:9fd0:e2f3, deny tcp host 192.168.132.120 any eq 0, deny tcp any eq 0 host 192.168.132.120, deny tcp host fe80::187d:a15f:7e3d:4b05 any eq 0, deny tcp any eq 0 host fe80::187d:a15f:7e3d:4b05, deny tcp host fe80::aede:48ff:fe00:1122 any eq 0, deny tcp any eq 0 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 0, deny tcp any eq 0 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -556,7 +556,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.227.78 or host fe80::aede:48ff:fe00:1122 or host fe80::3d1d:4255:d128:ed56 or host fe80::2da6:a7b9:af7f:909b or host fe80::5733:9f31:58e4:3d00 or host fe80::14ce:c2ff:fec0:aa3d or host fe80::14ce:c2ff:fec0:aa3d or host 2600:8805:4800:d::1788 or host 2600:8805:4800:d:4cc2:e875:c6b5:91ba or host 2600:8805:4800:d:187b:31a3:37a5:82b9 or host 192.168.132.120 or host fe80::149d:8688:9e08:959b or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.204.219 or host fe80::d5a1:84cc:1b23:33d5 or host fe80::19f6:3881:bc4:e59b or host fe80::8513:5a84:1a54:148f or host fe80::b8bb:e0ff:fe34:64ee or host fe80::b8bb:e0ff:fe34:64ee or host 2600:8805:4800:3c:d597:260b:a4de:1365 or host 2600:8805:4800:3c:1c6f:6e8a:9fd0:e2f3 or host 192.168.132.120 or host fe80::187d:a15f:7e3d:4b05 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -1842,6 +1842,10 @@ protocols.display_byte_fields_with_spaces: TRUE
 # TRUE or FALSE (case-insensitive)
 #dsi.desegment: TRUE
 
+# Semicolon-separated list of private RSA keys used for DTLS decryption. Used by versions of Wireshark prior to 1.6
+# A string
+#dtls.keys_list: 
+
 # redirect dtls debug to file name; leave empty to disable debug, use "-" to redirect output to stderr
 # 
 # A path to a file
@@ -2013,7 +2017,7 @@ protocols.display_byte_fields_with_spaces: TRUE
 # Any - Any bytes after the payload up to the minimum ethernet frame size will be treated as padding.  Additional bytes will be considered trailer.
 # One of: Never, Zeros, Any
 # (case-insensitive).
-#eth.padding: Zeros
+eth.padding: Any
 
 # Some TAPs add a fixed length ethernet trailer at the end of the frame, but before the (optional) FCS. Make sure it gets interpreted correctly.
 # A decimal number
@@ -4623,7 +4627,7 @@ ipv6.exthdr_under_root_protocol_tree: TRUE
 # A string
 #sccp.default_payload: 
 
-# Use all bytes for data payload. Overcome 255 bytes limit of SCCP stadard.  (Some tracing tool save information without DT1 segmentation of 255 bytes)
+# Use all bytes for data payload. Overcome 255 bytes limit of SCCP standard.  (Some tracing tools externally reassemble segmented data.)
 # TRUE or FALSE (case-insensitive)
 #sccp.dt1_ignore_length: FALSE
 
@@ -5162,7 +5166,7 @@ tcp.ignore_tcp_timestamps: TRUE
 
 # Do not call any subdissectors for Retransmitted or OutOfOrder segments
 # TRUE or FALSE (case-insensitive)
-#tcp.no_subdissector_on_error: TRUE
+tcp.no_subdissector_on_error: FALSE
 
 # Assume TCP Experimental Options (253, 254) have a Magic Number and use it for dissection
 # TRUE or FALSE (case-insensitive)
@@ -5308,6 +5312,10 @@ tcp.dissect_experimental_options_with_magic: FALSE
 # Whether the TIPC-over-TCP dissector should reassemble messages spanning multiple TCP segments. To use this option, you must also enable "Allow subdissectors to reassemble TCP streams" in the TCP protocol settings.
 # TRUE or FALSE (case-insensitive)
 #tipc.desegment: TRUE
+
+# Semicolon-separated list of private RSA keys used for TLS decryption. Used by versions of Wireshark prior to 1.6
+# A string
+#tls.keys_list: 
 
 # Redirect TLS debug to the file specified. Leave empty to disable debugging or use "-" to redirect output to stderr.
 # A path to a file
