@@ -636,7 +636,7 @@ protocols.display_byte_fields_with_spaces: TRUE
 
 # Protocols may use things like VLAN ID or interface ID to narrow the potential for duplicate conversations. Currently ICMP and ICMPv6 use this preference to add VLAN ID to conversation tracking, and IPv4 uses this preference to take VLAN ID into account during reassembly
 # TRUE or FALSE (case-insensitive)
-#protocols.strict_conversation_tracking_heuristics: FALSE
+protocols.strict_conversation_tracking_heuristics: TRUE
 
 # Use a registered heuristic sub-dissector to decode the data payload
 # TRUE or FALSE (case-insensitive)
