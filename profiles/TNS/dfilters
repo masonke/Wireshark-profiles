@@ -1,1 +1,12 @@
-"TNS Connect String" (tns.type == 1) || (tns.type == 11) || (tns.type == 2)
+"Low TCP Win" tcp.window_size =< 1460
+"Initial SYN" tcp.flags.syn == 1 && tcp.flags.ack==0
+"S-F-R" tcp.flags&7
+"SYN" tcp.flags.syn == 1
+"FIN" tcp.flags.fin == 1
+"RST" tcp.flags.reset == 1
+"Retrans" tcp.analysis.retransmission || tcp.analysis.fast_retransmission
+"TCP Length >0" tcp.len > 0
+"Zero Win" tcp.window_size == 0
+"Eth broadcast" eth.addr == ff:ff:ff:ff:ff:ff
+"Correct syntax for not IP addr" !(ip.addr == 192.168.0.1)
+"How to specify different ports in { }" ip.addr == 192.0.2.1 and not tcp.port in {80 25}
