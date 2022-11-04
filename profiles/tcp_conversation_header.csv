@@ -1,0 +1,2 @@
+Address A	Port A	Address B	Port B	Packets	Bytes	Stream ID	Packets A->B	Bytes A->B	Packets B->A	Bytes B->A	Rel Start	Duration	Bits/s A->B	Bits/s B->A
+Address A	Port A	Address B	Port B	Packets	Bytes	Stream ID	Total Packets	% Filtered	Packets A->B	Bytes A->B	Packets B->A	Bytes B->A	Rel Start	Duration	Bits/s A->B	Bits/s B->A

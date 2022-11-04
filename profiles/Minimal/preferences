@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 4.0.0.
+# Configuration file for Wireshark 4.0.1.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -552,7 +552,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.218.138 any eq 22, deny tcp any eq 22 host 10.189.218.138, deny tcp host fe80::6a07:f15c:58de:e8e8 any eq 22, deny tcp any eq 22 host fe80::6a07:f15c:58de:e8e8, deny tcp host fe80::36cb:c63a:9104:466c any eq 22, deny tcp any eq 22 host fe80::36cb:c63a:9104:466c, deny tcp host fe80::3883:aeff:fe73:3eb5 any eq 22, deny tcp any eq 22 host fe80::3883:aeff:fe73:3eb5, deny tcp host fe80::3883:aeff:fe73:3eb5 any eq 22, deny tcp any eq 22 host fe80::3883:aeff:fe73:3eb5, deny tcp host 2600:8805:4800:9::1788 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9::1788, deny tcp host 2600:8805:4800:9:dd67:bd83:2f67:d520 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9:dd67:bd83:2f67:d520, deny tcp host 2600:8805:4800:9:436:80a1:d475:29d6 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9:436:80a1:d475:29d6, deny tcp host 192.168.132.120 any eq 22, deny tcp any eq 22 host 192.168.132.120, deny tcp host fe80::1444:885d:422e:9b86 any eq 22, deny tcp any eq 22 host fe80::1444:885d:422e:9b86, deny tcp host fe80::aede:48ff:fe00:1122 any eq 22, deny tcp any eq 22 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host 10.189.213.134 any eq 22, deny tcp any eq 22 host 10.189.213.134, deny tcp host fe80::63d8:ffe2:d96d:bc68 any eq 22, deny tcp any eq 22 host fe80::63d8:ffe2:d96d:bc68, deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::9590:ba2f:b450:4255 any eq 22, deny tcp any eq 22 host fe80::9590:ba2f:b450:4255, deny tcp host fe80::88b1:8745:39d7:fde0 any eq 22, deny tcp any eq 22 host fe80::88b1:8745:39d7:fde0, deny tcp host fe80::d49a:48ff:fea9:ae07 any eq 22, deny tcp any eq 22 host fe80::d49a:48ff:fea9:ae07, deny tcp host fe80::d49a:48ff:fea9:ae07 any eq 22, deny tcp any eq 22 host fe80::d49a:48ff:fea9:ae07, deny tcp host 2600:8805:4800:9::1788 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9::1788, deny tcp host 2600:8805:4800:9:98b7:c59a:533f:b631 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9:98b7:c59a:533f:b631, deny tcp host 2600:8805:4800:9:436:80a1:d475:29d6 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9:436:80a1:d475:29d6, deny tcp host 192.168.132.120 any eq 22, deny tcp any eq 22 host 192.168.132.120, deny tcp host fe80::1828:e73f:d71b:c9a2 any eq 22, deny tcp any eq 22 host fe80::1828:e73f:d71b:c9a2, deny tcp host fe80::aede:48ff:fe00:1122 any eq 22, deny tcp any eq 22 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -632,7 +632,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.218.138 or host fe80::6a07:f15c:58de:e8e8 or host fe80::36cb:c63a:9104:466c or host fe80::3883:aeff:fe73:3eb5 or host fe80::3883:aeff:fe73:3eb5 or host 2600:8805:4800:9::1788 or host 2600:8805:4800:9:dd67:bd83:2f67:d520 or host 2600:8805:4800:9:436:80a1:d475:29d6 or host 192.168.132.120 or host fe80::1444:885d:422e:9b86 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host 10.189.213.134 or host fe80::63d8:ffe2:d96d:bc68 or host fe80::ce81:b1c:bd2c:69e or host fe80::9590:ba2f:b450:4255 or host fe80::88b1:8745:39d7:fde0 or host fe80::d49a:48ff:fea9:ae07 or host fe80::d49a:48ff:fea9:ae07 or host 2600:8805:4800:9::1788 or host 2600:8805:4800:9:98b7:c59a:533f:b631 or host 2600:8805:4800:9:436:80a1:d475:29d6 or host 192.168.132.120 or host fe80::1828:e73f:d71b:c9a2 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -658,7 +658,7 @@ capture.auto_scroll: FALSE
 
 # Resolve IPv4, IPv6, and IPX addresses into host names. The next set of check boxes determines how name resolution should be performed. If no other options are checked name resolution is made from Wireshark's host file and capture file name resolution blocks.
 # TRUE or FALSE (case-insensitive)
-#nameres.network_name: FALSE
+nameres.network_name: TRUE
 
 # Use address/name pairs found in captured DNS packets for name resolution.
 # TRUE or FALSE (case-insensitive)
@@ -1154,9 +1154,9 @@ protocols.strict_conversation_tracking_heuristics: TRUE
 #arp.register_network_address_binding: TRUE
 
 # Select the CAT001 version
-# One of: Version 1.3 (latest), Version 1.3, Version 1.2
+# One of: Version 1.4 (latest), Version 1.4, Version 1.3, Version 1.2
 # (case-insensitive).
-#asterix.i001_version: Version 1.3 (latest)
+#asterix.i001_version: Version 1.4 (latest)
 
 # Select the CAT002 version
 # One of: Version 1.1 (latest), Version 1.1, Version 1.0
@@ -2149,7 +2149,7 @@ eth.padding: Any
 
 # Enabling this will perform analysis of the trailer data.  It will enable taps on other protocols and slow down Wireshark.
 # TRUE or FALSE (case-insensitive)
-#f5ethtrailer.perform_analysis: TRUE
+#f5ethtrailer.perform_analysis: FALSE
 
 # In/out only removes slot/tmm information.  Brief shortens the string to >S/T (for in) or <S/T (for out).  See "Brief in/out characters" below.
 # One of: None, Full, In/out only, Brief, Brief in/out only
@@ -2501,10 +2501,6 @@ frame.disable_packet_size_limited_in_summary: TRUE
 # TRUE or FALSE (case-insensitive)
 #h245.prepand: FALSE
 
-# Desegment H.501 messages that span more TCP segments
-# TRUE or FALSE (case-insensitive)
-#h501.desegment: TRUE
-
 # Maintain relationships between transactions and contexts and display an extra tree showing context data
 # TRUE or FALSE (case-insensitive)
 #h248.ctx_info: FALSE
@@ -2512,6 +2508,10 @@ frame.disable_packet_size_limited_in_summary: TRUE
 # Desegment H.248 messages that span more TCP segments
 # TRUE or FALSE (case-insensitive)
 #h248.desegment: TRUE
+
+# Desegment H.501 messages that span more TCP segments
+# TRUE or FALSE (case-insensitive)
+#h501.desegment: TRUE
 
 # Whether the HART-IP dissector should desegment all messages spanning multiple TCP segments
 # TRUE or FALSE (case-insensitive)

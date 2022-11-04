@@ -16,6 +16,7 @@ recent_common
 hosts
 *.bak
 maxmind
+maxmind-hold
 maxmind_db_paths
 ## Ignore company specific profiles that start with ZZ-
 ZZ-*
