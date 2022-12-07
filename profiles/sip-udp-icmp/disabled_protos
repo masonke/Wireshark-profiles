@@ -173,9 +173,11 @@ bcp_ncp.opt.bcp_ind
 bcp_ncp.opt.bridge_id
 brcm-tag
 brp
+bsap
 bscvlc
 ccp.opt.bsdcomp
 bssap
+bssap_le
 bssap_plus
 bssgp
 bsslap
@@ -635,7 +637,6 @@ cdt
 cemi
 ceph
 cesoeth
-pwcesopsn
 cfm
 chargen
 chargingase
@@ -689,6 +690,7 @@ cops
 corosync_totemnet
 corosync_totemsrp
 cose
+cose_params
 giop-coseventcomm
 cosine
 giop-cosnaming
@@ -702,11 +704,6 @@ cql
 credssp
 crf
 crmf
-crtp
-crtp_cntcp
-crtp_cs
-crtp_cudp16
-crtp_cudp8
 csm_encaps
 ctdb
 cups
@@ -904,6 +901,7 @@ enc
 ipcp.opt.iphc.enhanced_rtp_compress
 enrp
 enttec
+eobi
 epl
 epl_v1
 epm
@@ -1101,7 +1099,6 @@ pw_hdlc_nocw_hdlc_ppp
 pw_hdlc_nocw_fr
 hdmi
 ccp.opt.hpppc
-hi2operations
 hipercontracer
 hiqnet
 hislip
@@ -1429,7 +1426,6 @@ nas-5gs
 nas-eps
 nasdaq_itch
 nasdaq_soup
-nb_rtpmux
 nbap
 nbd
 nbifom
@@ -1575,6 +1571,7 @@ pn_io_device
 pn_io_implicitar
 pn_io_parameterserver
 pn_io_supervisor
+pn_io_time_aware_status
 poc-settings
 pop
 portcontrol
@@ -1650,13 +1647,11 @@ r-stp
 ieee8021cb
 r09
 r3
-rtp_rfc2198
 radius
 raknet
 ranap
 obex.parameter.raw
 raw_sigcomp
-raw_sip
 rbm
 rdaclif
 rdc
@@ -1737,15 +1732,7 @@ rtls
 rtmac
 rtmp
 rtmpt
-rtp
 ipcp.opt.iphc.rtp_compress
-rtpevent
-rtp.ext.ed137
-rtpmidi
-rtpproxy
-rtps
-rtpsproc
-rtpsvt
 rtse
 rtsp
 rua
@@ -1762,7 +1749,6 @@ ipdr_samis_type_1
 samr
 sap
 sasp
-pwsatopcw
 sbc
 sbcap
 sbus
@@ -1802,8 +1788,6 @@ signal_pdu
 simple
 lcp.opt.sonet_sdh
 simulcrypt
-sip
-sipfrag
 sir
 sita
 skinny
@@ -1924,6 +1908,7 @@ tnef
 tns
 tr
 tpcp
+tpkt
 tpkt
 tplink-smarthome
 tpm
