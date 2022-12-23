@@ -1,0 +1,51 @@
+frame[3] & 0x0F == 7
+1) Look at the 4th byte of the frame
+2) Mask 0F, so look at all bits in the low nibble
+3) Only pass those with the number 7 in the low nibble
+
+https://www.howtouselinux.com/post/tcpdump-capture-packets-with-tcp-flags
+
+Only SYN
+tcp.flags & 0x12 == 2
+Look at the Ack bit (0x10) and Syn (0x02), but only pass when 0x02 is 1 and ACK is not 1
+
+Syn/Ack
+tcp.flags & 0x02 == 2
+tcp.flags & 0x2 == 2
+
+
+ FIN 0x01
+ SYN 0x02
+ RST 0x04
+ PSH 0x08
+ ACK 0x10
+ URG 0x20
+ ECE 0x40
+ CWR 0x80
+ 
+Flag	Dec	Hex	Binary
+Fin 	  1	01	00000001
+Syn 	  2	02	00000010
+Rst 	  4	04	00000100
+Push	  8	08	00001000
+Ack 	 16	10	00010000
+Urg 	 32	20	00100000
+ECE 	 64	40	01000000
+CWR 	128	80	10000000
+
+tcp.flags & 0x0f == 0x01	# Fin & Fin/Ack
+tcp.flags & 0x11 == 0x11	# Only Fin & Fin/Ack
+tcp.flags & 0x12 == 0x02	# Syn only. Mask out the Ack
+tcp.flags & 0x0f == 0x02	# Syn & Syn/Ack
+tcp.flags & 0x02 == 0x02	# Packets with a Syn
+tcp.flags & 0x12 == 0x12	# Only Syn/Ack
+tcp.flags & 0xff == 18  	# Only Syn/Ack w/decimal mask
+tcp.flags & 0x0f == 0x08	# Push & Push/Ack
+tcp.flags & 0x18 == 0x18	# Only Acks w/ Push
+tcp.flags & 0x10 == 0x10	# All Acks
+tcp.flags & 0x18 == 0x10	# All acks except ack/push
+
+tcp.flags & 0x0f == 0b000000001 # Fin/Ack
+tcp.flags & 0x0f == 0b000000010 # Syn/Ack
+tcp.flags & 0x0f == 0b000001000 # Push/Ack
+
