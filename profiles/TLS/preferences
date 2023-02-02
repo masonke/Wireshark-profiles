@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 4.0.1.
+# Configuration file for Wireshark 4.0.3.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -252,7 +252,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R,%Cus:tcp.window_size:0:R,%Cus:tcp.completeness:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R,%Cus:tcp.window_size:0:R,%Cus:tcp.completeness:0:R,%Cus:http.response.code:0:R,%Cus:ocsp.responseStatus:0:R,%Cus:ocsp.good_element:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -290,13 +290,16 @@ gui.column.format:
 	"Version", "%Cus:tls.record.version:0:R",
 	"Win Size", "%Cus:tcp.window_size:0:R",
 	"completeness", "%Cus:tcp.completeness:0:R",
+	"Status Code", "%Cus:http.response.code:0:R",
+	"responseStatus", "%Cus:ocsp.responseStatus:0:R",
+	"good", "%Cus:ocsp.good_element:0:R",
 	"Info", "%i"
 
 ####### User Interface: Font ########
 
 # Font name for packet list, protocol tree, and hex dump panes. (Qt)
 # A string
-gui.qt.font_name: Inconsolata Nerd Font,16,-1,5,57,0,0,0,0,0,Medium
+gui.qt.font_name: Menlo,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Medium
 
 ####### User Interface: Layout ########
 
@@ -529,7 +532,7 @@ capture.auto_scroll: FALSE
 
 # Remote SSH server username
 # A string
-#extcap.ciscodump.remoteusername: f8sz4ay
+#extcap.ciscodump.remoteusername: kevin.mason
 
 # Remote SSH server password
 # Password (never stored on disk)
@@ -549,7 +552,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host 10.189.219.167 any eq 22, deny tcp any eq 22 host 10.189.219.167, deny tcp host fe80::fc1f:e039:e2e0:bc9 any eq 22, deny tcp any eq 22 host fe80::fc1f:e039:e2e0:bc9, deny tcp host fe80::a746:8aec:7adb:f596 any eq 22, deny tcp any eq 22 host fe80::a746:8aec:7adb:f596, deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::4426:97f0:3c1a:c365 any eq 22, deny tcp any eq 22 host fe80::4426:97f0:3c1a:c365, deny tcp host fe80::644e:241b:9082:a5df any eq 22, deny tcp any eq 22 host fe80::644e:241b:9082:a5df, deny tcp host fe80::1cb8:22ff:feae:74e6 any eq 22, deny tcp any eq 22 host fe80::1cb8:22ff:feae:74e6, deny tcp host fe80::1cb8:22ff:feae:74e6 any eq 22, deny tcp any eq 22 host fe80::1cb8:22ff:feae:74e6, deny tcp host 2600:8805:4800:9::1788 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9::1788, deny tcp host 2600:8805:4800:9:bc2a:dae:972b:eea4 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9:bc2a:dae:972b:eea4, deny tcp host 2600:8805:4800:9:436:80a1:d475:29d6 any eq 22, deny tcp any eq 22 host 2600:8805:4800:9:436:80a1:d475:29d6, deny tcp host 192.168.132.120 any eq 22, deny tcp any eq 22 host 192.168.132.120, deny tcp host fe80::18e0:ace9:f226:d63 any eq 22, deny tcp any eq 22 host fe80::18e0:ace9:f226:d63, deny tcp host fe80::aede:48ff:fe00:1122 any eq 22, deny tcp any eq 22 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host fc00::6440:1 any eq 22, deny tcp any eq 22 host fc00::6440:1, deny tcp host fe80::8ae9:feff:fe78:d393 any eq 22, deny tcp any eq 22 host fe80::8ae9:feff:fe78:d393, deny tcp host 100.64.0.1 any eq 22, deny tcp any eq 22 host 100.64.0.1, deny tcp host fe80::aede:48ff:fe00:1122 any eq 22, deny tcp any eq 22 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::c4c4:1eb5:2870:7214 any eq 22, deny tcp any eq 22 host fe80::c4c4:1eb5:2870:7214, deny tcp host fe80::d20a:224:38b8:60b5 any eq 22, deny tcp any eq 22 host fe80::d20a:224:38b8:60b5, deny tcp host fe80::8cda:32ff:fe43:21b3 any eq 22, deny tcp any eq 22 host fe80::8cda:32ff:fe43:21b3, deny tcp host fe80::8cda:32ff:fe43:21b3 any eq 22, deny tcp any eq 22 host fe80::8cda:32ff:fe43:21b3, deny tcp host 2600:8805:4a00:38::11ae any eq 22, deny tcp any eq 22 host 2600:8805:4a00:38::11ae, deny tcp host 2600:8805:4a00:38:c952:864d:4e3d:153e any eq 22, deny tcp any eq 22 host 2600:8805:4a00:38:c952:864d:4e3d:153e, deny tcp host 2600:8805:4a00:38:182f:2dd8:270e:ef0d any eq 22, deny tcp any eq 22 host 2600:8805:4a00:38:182f:2dd8:270e:ef0d, deny tcp host 192.168.132.166 any eq 22, deny tcp any eq 22 host 192.168.132.166, deny tcp host fe80::1408:9004:c7f8:fd07 any eq 22, deny tcp any eq 22 host fe80::1408:9004:c7f8:fd07, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -629,7 +632,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host 10.189.219.167 or host fe80::fc1f:e039:e2e0:bc9 or host fe80::a746:8aec:7adb:f596 or host fe80::ce81:b1c:bd2c:69e or host fe80::4426:97f0:3c1a:c365 or host fe80::644e:241b:9082:a5df or host fe80::1cb8:22ff:feae:74e6 or host fe80::1cb8:22ff:feae:74e6 or host 2600:8805:4800:9::1788 or host 2600:8805:4800:9:bc2a:dae:972b:eea4 or host 2600:8805:4800:9:436:80a1:d475:29d6 or host 192.168.132.120 or host fe80::18e0:ace9:f226:d63 or host fe80::aede:48ff:fe00:1122 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host fc00::6440:1 or host fe80::8ae9:feff:fe78:d393 or host 100.64.0.1 or host fe80::aede:48ff:fe00:1122 or host fe80::ce81:b1c:bd2c:69e or host fe80::c4c4:1eb5:2870:7214 or host fe80::d20a:224:38b8:60b5 or host fe80::8cda:32ff:fe43:21b3 or host fe80::8cda:32ff:fe43:21b3 or host 2600:8805:4a00:38::11ae or host 2600:8805:4a00:38:c952:864d:4e3d:153e or host 2600:8805:4a00:38:182f:2dd8:270e:ef0d or host 192.168.132.166 or host fe80::1408:9004:c7f8:fd07 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -2127,6 +2130,10 @@ eth.padding: Never
 # Whether the EVRC dissector should process payload type 60 as legacy EVRC packets
 # TRUE or FALSE (case-insensitive)
 #evrc.legacy_pt_60: FALSE
+
+# Decode payload assuming that Header-Full format only is used
+# TRUE or FALSE (case-insensitive)
+#evs.hf_only: FALSE
 
 # Controls the display of the session's username in the info column.  This is only displayed if the packet containing it was seen during this capture session.
 # TRUE or FALSE (case-insensitive)
@@ -4238,6 +4245,10 @@ json.ignore_leading_bytes: TRUE
 # Specifies that the JSON text of the Protobuf message should be displayed in addition to the dissection tree
 # TRUE or FALSE (case-insensitive)
 #protobuf.display_json_mapping: FALSE
+
+# Display timestamp in UTC format
+# TRUE or FALSE (case-insensitive)
+#protobuf.use_utc: FALSE
 
 # Try to dissect all undefined length-delimited fields as string.
 # TRUE or FALSE (case-insensitive)
