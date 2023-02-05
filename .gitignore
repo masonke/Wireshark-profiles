@@ -9,6 +9,8 @@
 
 #
 decode_as_entries
+*.bbprojectd
+.DS_Store
 heuristic_protos
 io_graphs
 recent
