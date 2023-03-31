@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 4.0.3.
+# Configuration file for Wireshark 4.0.4.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -252,7 +252,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:ip.ttl:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tcp.flags.str:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R,%Cus:tcp.window_size:0:R,%Cus:tcp.completeness:0:R,%Cus:http.response.code:0:R,%Cus:ocsp.responseStatus:0:R,%Cus:ocsp.good_element:0:R
+gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:ip.ttl:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R,%Cus:tcp.window_size:0:R,%Cus:tcp.completeness:0:R,%Cus:http.response.code:0:R,%Cus:ocsp.responseStatus:0:R,%Cus:ocsp.good_element:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -269,6 +269,7 @@ gui.column.format:
 	"Length", "%L",
 	"D Port", "%Cus:tcp.dstport:0:R",
 	"IP ID", "%Cus:ip.id:0:R",
+	"TTL", "%Cus:ip.ttl:0:R",
 	"SEQ#", "%Cus:tcp.seq:0:R",
 	"TCP-LEN", "%Cus:tcp.len:0:R",
 	"NextSEQ", "%Cus:tcp.nxtseq:0:R",
@@ -279,13 +280,12 @@ gui.column.format:
 	"Ack Time", "%Cus:tcp.analysis.ack_rtt:0:R",
 	"BIF", "%Cus:tcp.analysis.bytes_in_flight:0:R",
 	"Bytes since PSH", "%Cus:tcp.analysis.push_bytes_sent:0:R",
-	"TTL", "%Cus:ip.ttl:0:R",
 	"PcbDevNo", "%Cus:nstrace.pdevno:0:R",
 	"Linked PcbDevNo", "%Cus:nstrace.l_pdevno:0:R",
 	"Pubkey Length", "%Cus:tls.handshake.ys_len:0:R",
 	"TLS Len", "%Cus:tls.record.length:0:R",
 	"iRTT", "%Cus:tcp.analysis.initial_rtt:0:R",
-	"Flags Str", "%Cus:tcp.flags.str:0:R",
+	"TCP Flags", "%Cus:tcp.flags.str:0:R",
 	"Version", "%Cus:tls.handshake.version:0:R",
 	"Version", "%Cus:tls.record.version:0:R",
 	"Win Size", "%Cus:tcp.window_size:0:R",
@@ -532,7 +532,7 @@ capture.auto_scroll: FALSE
 
 # Remote SSH server username
 # A string
-#extcap.ciscodump.remoteusername: kevin.mason
+#extcap.ciscodump.remoteusername: kem
 
 # Remote SSH server password
 # Password (never stored on disk)
@@ -552,7 +552,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host fc00::6440:1 any eq 22, deny tcp any eq 22 host fc00::6440:1, deny tcp host fe80::8ae9:feff:fe78:d393 any eq 22, deny tcp any eq 22 host fe80::8ae9:feff:fe78:d393, deny tcp host 100.64.0.1 any eq 22, deny tcp any eq 22 host 100.64.0.1, deny tcp host fe80::aede:48ff:fe00:1122 any eq 22, deny tcp any eq 22 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::a5f8:8ed7:aa0f:f96a any eq 22, deny tcp any eq 22 host fe80::a5f8:8ed7:aa0f:f96a, deny tcp host fe80::5b4d:de30:76de:78ba any eq 22, deny tcp any eq 22 host fe80::5b4d:de30:76de:78ba, deny tcp host fe80::686a:55ff:fe9e:38c9 any eq 22, deny tcp any eq 22 host fe80::686a:55ff:fe9e:38c9, deny tcp host fe80::686a:55ff:fe9e:38c9 any eq 22, deny tcp any eq 22 host fe80::686a:55ff:fe9e:38c9, deny tcp host 2600:8805:4a00:38::11ae any eq 22, deny tcp any eq 22 host 2600:8805:4a00:38::11ae, deny tcp host 2600:8805:4a00:38:b108:671e:cb2e:1f32 any eq 22, deny tcp any eq 22 host 2600:8805:4a00:38:b108:671e:cb2e:1f32, deny tcp host 2600:8805:4a00:38:182f:2dd8:270e:ef0d any eq 22, deny tcp any eq 22 host 2600:8805:4a00:38:182f:2dd8:270e:ef0d, deny tcp host 192.168.132.166 any eq 22, deny tcp any eq 22 host 192.168.132.166, deny tcp host fe80::10d5:35d3:b5f3:2e7e any eq 22, deny tcp any eq 22 host fe80::10d5:35d3:b5f3:2e7e, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::ef49:6765:91b9:abcc any eq 22, deny tcp any eq 22 host fe80::ef49:6765:91b9:abcc, deny tcp host fe80::8c6a:d3ff:f3df:e9ee any eq 22, deny tcp any eq 22 host fe80::8c6a:d3ff:f3df:e9ee, deny tcp host fe80::8456:cfff:fee3:2c20 any eq 22, deny tcp any eq 22 host fe80::8456:cfff:fee3:2c20, deny tcp host fe80::8456:cfff:fee3:2c20 any eq 22, deny tcp any eq 22 host fe80::8456:cfff:fee3:2c20, deny tcp host 192.168.139.15 any eq 22, deny tcp any eq 22 host 192.168.139.15, deny tcp host fe80::18ce:a3b7:b8fb:2ece any eq 22, deny tcp any eq 22 host fe80::18ce:a3b7:b8fb:2ece, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -632,7 +632,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host fc00::6440:1 or host fe80::8ae9:feff:fe78:d393 or host 100.64.0.1 or host fe80::aede:48ff:fe00:1122 or host fe80::ce81:b1c:bd2c:69e or host fe80::a5f8:8ed7:aa0f:f96a or host fe80::5b4d:de30:76de:78ba or host fe80::686a:55ff:fe9e:38c9 or host fe80::686a:55ff:fe9e:38c9 or host 2600:8805:4a00:38::11ae or host 2600:8805:4a00:38:b108:671e:cb2e:1f32 or host 2600:8805:4a00:38:182f:2dd8:270e:ef0d or host 192.168.132.166 or host fe80::10d5:35d3:b5f3:2e7e or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host fe80::ce81:b1c:bd2c:69e or host fe80::ef49:6765:91b9:abcc or host fe80::8c6a:d3ff:f3df:e9ee or host fe80::8456:cfff:fee3:2c20 or host fe80::8456:cfff:fee3:2c20 or host 192.168.139.15 or host fe80::18ce:a3b7:b8fb:2ece or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -1214,7 +1214,7 @@ protocols.strict_conversation_tracking_heuristics: TRUE
 #asterix.i020_version: Version 1.10 (latest)
 
 # Select the CAT021 version
-# One of: Version 2.6 (latest), Version 2.6, Version 2.5, Version 2.4
+# One of: Version 2.6 (latest), Version 2.6, Version 2.5, Version 2.4, Version 0.23
 # (case-insensitive).
 #asterix.i021_version: Version 2.6 (latest)
 
@@ -1239,9 +1239,9 @@ protocols.strict_conversation_tracking_heuristics: TRUE
 #asterix.i034_version: Version 1.29 (latest)
 
 # Select the CAT048 version
-# One of: Version 1.30 (latest), Version 1.30, Version 1.29, Version 1.28, Version 1.27
+# One of: Version 1.31 (latest), Version 1.31, Version 1.30, Version 1.29, Version 1.28, Version 1.27
 # (case-insensitive).
-#asterix.i048_version: Version 1.30 (latest)
+#asterix.i048_version: Version 1.31 (latest)
 
 # Select the CAT062 version
 # One of: Version 1.19 (latest), Version 1.19, Version 1.18, Version 1.17
@@ -1254,7 +1254,7 @@ protocols.strict_conversation_tracking_heuristics: TRUE
 #asterix.i063_version: Version 1.6 (latest)
 
 # Select the CAT065 version
-# One of: Version 1.5 (latest), Version 1.5
+# One of: Version 1.5 (latest), Version 1.5, Version 1.4
 # (case-insensitive).
 #asterix.i065_version: Version 1.5 (latest)
 
@@ -2760,7 +2760,7 @@ file-pcapng.dissect_next_layer: TRUE
 
 # Whether to look up IP addresses in each MaxMind database we have loaded
 # TRUE or FALSE (case-insensitive)
-ip.use_geoip: FALSE
+#ip.use_geoip: TRUE
 
 # Whether to interpret the originally reserved flag as security flag
 # TRUE or FALSE (case-insensitive)

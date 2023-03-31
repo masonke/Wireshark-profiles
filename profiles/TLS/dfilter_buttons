@@ -51,3 +51,4 @@
 "TRUE","SMB//SMB >.4","smb.time>.4 || smb2.time>.4","Any SMB responses that are greater than .4 seconds"
 "TRUE","Some Errors","dns.flags.rcode > 0 ||\x0ahttp.response.code > 399 || smb.nt_status > 0 ||\x0asmb2.nt_status > 0","Show me DNS or HTTP or SMB errors"
 "TRUE","PKT w/Comment","pkt_comment","Packets with Comments"
+"TRUE","StrmIndx","tcp.stream == 0","StrmIndx"
