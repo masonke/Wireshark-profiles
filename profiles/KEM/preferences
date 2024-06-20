@@ -23,11 +23,11 @@
 
 # The max. number of items in the open recent files list
 # A decimal number
-gui.recent_files_count.max: 30
+#gui.recent_files_count.max: 10
 
 # The max. number of entries in the display filter list
 # A decimal number
-gui.recent_display_filter_entries.max: 30
+#gui.recent_display_filter_entries.max: 10
 
 # Directory to start in when opening File Open dialog.
 # A path to a directory
@@ -85,7 +85,7 @@ gui.recent_display_filter_entries.max: 30
 # %S = a conditional separator (" - ") that only shows when surrounded by variables with values or static text
 # %V = version info
 # A string
-gui.window_title: Profile: %P %S Path %F %S
+#gui.window_title: 
 
 # Custom window title to be prepended to the existing title
 # %F = file path of the capture file
@@ -166,7 +166,7 @@ gui.window_title: Profile: %P %S Path %F %S
 # 8 = External Capture,
 # 9 = Virtual
 # A string
-gui.interfaces_hidden_types: 8,0
+#gui.interfaces_hidden_types: 
 
 # Enables automatic updates for IO Graph
 # TRUE or FALSE (case-insensitive)
@@ -184,12 +184,12 @@ gui.interfaces_hidden_types: 8,0
 
 # Background color for an active selected item
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
-gui.active_frame.bg: 73fdff
+#gui.active_frame.bg: cbe8ff
 
 # Color style for an active selected item
 # One of: DEFAULT, FLAT, GRADIENT
 # (case-insensitive).
-gui.active_frame.style: GRADIENT
+#gui.active_frame.style: DEFAULT
 
 # Foreground color for an inactive selected item
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
@@ -197,12 +197,12 @@ gui.active_frame.style: GRADIENT
 
 # Background color for an inactive selected item
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
-gui.inactive_frame.bg: 73fdff
+#gui.inactive_frame.bg: efefef
 
 # Color style for an inactive selected item
 # One of: DEFAULT, FLAT, GRADIENT
 # (case-insensitive).
-gui.inactive_frame.style: GRADIENT
+#gui.inactive_frame.style: DEFAULT
 
 # Color preferences for a marked frame
 # A six-digit hexadecimal RGB color triplet (e.g. fce94f)
@@ -252,54 +252,25 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:tcp.time_delta:0:R,%Cus:vlan.id:0:R,%p,%L,%Cus:tcp.dstport:0:R,%Cus:ip.id:0:R,%Cus:ip.ttl:0:R,%Cus:tcp.window_size_value:0:R,%B,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:nstrace.pdevno:0:R,%Cus:nstrace.l_pdevno:0:R,%Cus:tls.handshake.ys_len:0:R,%Cus:tcp.analysis.initial_rtt:0:R,%Cus:tls.handshake.version:0:R,%Cus:tls.record.version:0:R,%Cus:tcp.window_size:0:R,%Cus:tcp.completeness:0:R,%Cus:http.response.code:0:R,%Cus:ocsp.responseStatus:0:R,%Cus:ocsp.good_element:0:R
+#gui.column.hidden: 
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
 gui.column.format: 
 	"No.", "%m",
 	"Time", "%t",
-	"Time Delta", "%Gt",
-	"TCP ST Delta", "%Cus:tcp.time_delta:0:R",
-	"VLID", "%Cus:vlan.id:0:R",
 	"Source", "%s",
 	"Destination", "%d",
 	"Protocol", "%p",
-	"StrmIndx", "%Cus:tcp.stream||udp.stream:0:R",
 	"Length", "%L",
-	"D Port", "%Cus:tcp.dstport:0:R",
-	"IP ID", "%Cus:ip.id:0:R",
-	"TTL", "%Cus:ip.ttl:0:R",
-	"SEQ#", "%Cus:tcp.seq:0:R",
-	"TCP-LEN", "%Cus:tcp.len:0:R",
-	"NextSEQ", "%Cus:tcp.nxtseq:0:R",
-	"ACK#", "%Cus:tcp.ack:0:R",
-	"ACK For", "%Cus:tcp.analysis.acks_frame:0:R",
-	"WIN Size", "%Cus:tcp.window_size_value:0:R",
-	"CumBytes", "%B",
-	"Ack Time", "%Cus:tcp.analysis.ack_rtt:0:R",
-	"BIF", "%Cus:tcp.analysis.bytes_in_flight:0:R",
-	"Bytes since PSH", "%Cus:tcp.analysis.push_bytes_sent:0:R",
-	"PcbDevNo", "%Cus:nstrace.pdevno:0:R",
-	"Linked PcbDevNo", "%Cus:nstrace.l_pdevno:0:R",
-	"Pubkey Length", "%Cus:tls.handshake.ys_len:0:R",
-	"TLS Len", "%Cus:tls.record.length:0:R",
-	"iRTT", "%Cus:tcp.analysis.initial_rtt:0:R",
-	"TCP Flags", "%Cus:tcp.flags.str:0:R",
-	"Version", "%Cus:tls.handshake.version:0:R",
-	"Version", "%Cus:tls.record.version:0:R",
-	"Win Size", "%Cus:tcp.window_size:0:R",
-	"completeness", "%Cus:tcp.completeness:0:R",
-	"Status Code", "%Cus:http.response.code:0:R",
-	"responseStatus", "%Cus:ocsp.responseStatus:0:R",
-	"good", "%Cus:ocsp.good_element:0:R",
+	"Stream index", "%Cus:tcp.stream:0:R",
 	"Info", "%i"
 
 ####### User Interface: Font ########
 
 # Font name for packet list, protocol tree, and hex dump panes. (Qt)
 # A string
-gui.qt.font_name: Menlo,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Medium
+gui.qt.font_name: SF Mono,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 ####### User Interface: Layout ########
 
@@ -324,7 +295,7 @@ gui.qt.font_name: Menlo,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Medium
 
 # Enable Packet List Separator
 # TRUE or FALSE (case-insensitive)
-gui.packet_list_separator.enabled: TRUE
+#gui.packet_list_separator.enabled: FALSE
 
 # Show column definition in packet list header
 # TRUE or FALSE (case-insensitive)
@@ -336,11 +307,11 @@ gui.packet_list_separator.enabled: TRUE
 
 # Show selected packet in the Status Bar
 # TRUE or FALSE (case-insensitive)
-gui.show_selected_packet.enabled: TRUE
+#gui.show_selected_packet.enabled: FALSE
 
 # Show file load time in the Status Bar
 # TRUE or FALSE (case-insensitive)
-gui.show_file_load_time.enabled: TRUE
+#gui.show_file_load_time.enabled: FALSE
 
 # Show related packet indicators in the first column
 # TRUE or FALSE (case-insensitive)
@@ -354,11 +325,11 @@ gui.show_file_load_time.enabled: TRUE
 
 # Default capture device
 # A string
-capture.device: Wi-Fi: en0
+#capture.device: 
 
 # Interface link-layer header types (Ex: en0(1),en1(143),...)
 # A string
-capture.devices_linktypes: en0(1),p2p0(12),awdl0(1),llw0(1),utun0(0),utun1(0),utun2(0),lo0(0),bridge0(1),en1(1),en2(1),gif0(0),stf0(0),ciscodump(147),randpkt(147),sshdump(147),udpdump(252),wifidump(147)
+#capture.devices_linktypes: 
 
 # Interface descriptions (Ex: eth0(eth0 descr),eth1(eth1 descr),...)
 # A string
@@ -374,19 +345,19 @@ capture.devices_linktypes: en0(1),p2p0(12),awdl0(1),llw0(1),utun0(0),utun1(0),ut
 
 # Interface buffer size (Ex: en0(1),en1(143),...)
 # A string
-capture.devices_buffersize: en0(2),p2p0(2),awdl0(2),llw0(2),utun0(2),utun1(2),utun2(2),lo0(2),bridge0(2),en1(2),en2(2),gif0(2),stf0(2),ciscodump(2),randpkt(2),sshdump(2),udpdump(2),wifidump(2)
+#capture.devices_buffersize: 
 
 # Interface snap length (Ex: en0(65535),en1(1430),...)
 # A string
-capture.devices_snaplen: en0:0(262144),p2p0:0(262144),awdl0:0(262144),llw0:0(262144),utun0:0(262144),utun1:0(262144),utun2:0(262144),lo0:0(262144),bridge0:0(262144),en1:0(262144),en2:0(262144),gif0:0(262144),stf0:0(262144),ciscodump:0(262144),randpkt:0(262144),sshdump:0(262144),udpdump:0(262144),wifidump:0(262144)
+#capture.devices_snaplen: 
 
 # Interface promiscuous mode (Ex: en0(0),en1(1),...)
 # A string
-capture.devices_pmode: en0(0),p2p0(0),awdl0(0),llw0(0),utun0(0),utun1(0),utun2(0),lo0(0),bridge0(0),en1(0),en2(0),gif0(0),stf0(0),ciscodump(0),randpkt(0),sshdump(0),udpdump(0),wifidump(0)
+#capture.devices_pmode: 
 
 # Capture in promiscuous mode?
 # TRUE or FALSE (case-insensitive)
-capture.prom_mode: FALSE
+#capture.prom_mode: TRUE
 
 # Interface capture filter (Ex: en0(tcp),en1(udp),...)
 # A string
@@ -410,7 +381,7 @@ capture.prom_mode: FALSE
 
 # Scroll packet list during capture?
 # TRUE or FALSE (case-insensitive)
-capture.auto_scroll: FALSE
+#capture.auto_scroll: TRUE
 
 # Show capture information dialog while capturing?
 # TRUE or FALSE (case-insensitive)
@@ -552,7 +523,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::21ac:399d:1220:8949 any eq 22, deny tcp any eq 22 host fe80::21ac:399d:1220:8949, deny tcp host fe80::e41b:51bd:79d0:b54 any eq 22, deny tcp any eq 22 host fe80::e41b:51bd:79d0:b54, deny tcp host fe80::c8a7:26ff:fe50:73cf any eq 22, deny tcp any eq 22 host fe80::c8a7:26ff:fe50:73cf, deny tcp host fe80::c8a7:26ff:fe50:73cf any eq 22, deny tcp any eq 22 host fe80::c8a7:26ff:fe50:73cf, deny tcp host 192.168.139.15 any eq 22, deny tcp any eq 22 host 192.168.139.15, deny tcp host fe80::859:83f4:590a:6df4 any eq 22, deny tcp any eq 22 host fe80::859:83f4:590a:6df4, deny tcp host 0.0.0.15 any eq 22, deny tcp any eq 22 host 0.0.0.15, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host fe80::8e70:fd78:575c:e776 any eq 22, deny tcp any eq 22 host fe80::8e70:fd78:575c:e776, deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::2795:dd1a:49f:e86a any eq 22, deny tcp any eq 22 host fe80::2795:dd1a:49f:e86a, deny tcp host fe80::aab5:fea9:59a8:18e3 any eq 22, deny tcp any eq 22 host fe80::aab5:fea9:59a8:18e3, deny tcp host fe80::fcbf:11ff:fefc:3430 any eq 22, deny tcp any eq 22 host fe80::fcbf:11ff:fefc:3430, deny tcp host 192.168.4.15 any eq 22, deny tcp any eq 22 host 192.168.4.15, deny tcp host fe80::cfe:5d4f:539:d66 any eq 22, deny tcp any eq 22 host fe80::cfe:5d4f:539:d66, deny tcp host fe80::fcbf:11ff:fefc:3430 any eq 22, deny tcp any eq 22 host fe80::fcbf:11ff:fefc:3430, deny tcp host fe80::1cfc:27dc:7e7e:a41f any eq 22, deny tcp any eq 22 host fe80::1cfc:27dc:7e7e:a41f, deny tcp host 192.168.139.15 any eq 22, deny tcp any eq 22 host 192.168.139.15, deny tcp host fe80::7ce9:1eff:febf:873 any eq 22, deny tcp any eq 22 host fe80::7ce9:1eff:febf:873, deny tcp host fe80::4ce5:8aff:fede:a902 any eq 22, deny tcp any eq 22 host fe80::4ce5:8aff:fede:a902, deny tcp host fe80::4ce5:8aff:fede:a904 any eq 22, deny tcp any eq 22 host fe80::4ce5:8aff:fede:a904, deny tcp host fe80::4ce5:8aff:fede:a903 any eq 22, deny tcp any eq 22 host fe80::4ce5:8aff:fede:a903, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -632,7 +603,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host fe80::ce81:b1c:bd2c:69e or host fe80::21ac:399d:1220:8949 or host fe80::e41b:51bd:79d0:b54 or host fe80::c8a7:26ff:fe50:73cf or host fe80::c8a7:26ff:fe50:73cf or host 192.168.139.15 or host fe80::859:83f4:590a:6df4 or host 0.0.0.15 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host fe80::8e70:fd78:575c:e776 or host fe80::ce81:b1c:bd2c:69e or host fe80::2795:dd1a:49f:e86a or host fe80::aab5:fea9:59a8:18e3 or host fe80::fcbf:11ff:fefc:3430 or host 192.168.4.15 or host fe80::cfe:5d4f:539:d66 or host fe80::fcbf:11ff:fefc:3430 or host fe80::1cfc:27dc:7e7e:a41f or host 192.168.139.15 or host fe80::7ce9:1eff:febf:873 or host fe80::4ce5:8aff:fede:a902 or host fe80::4ce5:8aff:fede:a904 or host fe80::4ce5:8aff:fede:a903 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -700,11 +671,11 @@ capture.auto_scroll: FALSE
 
 # Display all hidden protocol items in the packet list.
 # TRUE or FALSE (case-insensitive)
-protocols.display_hidden_proto_items: TRUE
+#protocols.display_hidden_proto_items: FALSE
 
 # Display all byte fields with a space character between each byte in the packet list.
 # TRUE or FALSE (case-insensitive)
-protocols.display_byte_fields_with_spaces: TRUE
+#protocols.display_byte_fields_with_spaces: FALSE
 
 # Look for dissectors that left some bytes undecoded.
 # TRUE or FALSE (case-insensitive)
@@ -712,7 +683,7 @@ protocols.display_byte_fields_with_spaces: TRUE
 
 # Protocols may use things like VLAN ID or interface ID to narrow the potential for duplicate conversations. Currently ICMP and ICMPv6 use this preference to add VLAN ID to conversation tracking, and IPv4 uses this preference to take VLAN ID into account during reassembly
 # TRUE or FALSE (case-insensitive)
-protocols.strict_conversation_tracking_heuristics: TRUE
+#protocols.strict_conversation_tracking_heuristics: FALSE
 
 # Use a registered heuristic sub-dissector to decode the data payload
 # TRUE or FALSE (case-insensitive)
@@ -2088,7 +2059,7 @@ protocols.strict_conversation_tracking_heuristics: TRUE
 # Any - Any bytes after the payload up to the minimum ethernet frame size will be treated as padding.  Additional bytes will be considered trailer.
 # One of: Never, Zeros, Any
 # (case-insensitive).
-eth.padding: Never
+#eth.padding: Zeros
 
 # Some TAPs add a fixed length ethernet trailer at the end of the frame, but before the (optional) FCS. Make sure it gets interpreted correctly.
 # A decimal number
@@ -2198,11 +2169,11 @@ eth.padding: Never
 
 # Dissect next layer
 # TRUE or FALSE (case-insensitive)
-file-pcap.dissect_next_layer: TRUE
+#file-pcap.dissect_next_layer: FALSE
 
 # Dissect next layer
 # TRUE or FALSE (case-insensitive)
-file-pcapng.dissect_next_layer: TRUE
+#file-pcapng.dissect_next_layer: FALSE
 
 # Whether the FIX dissector should reassemble messages spanning multiple TCP segments. To use this option, you must also enable "Allow subdissectors to reassemble TCP streams" in the TCP protocol settings.
 # TRUE or FALSE (case-insensitive)
@@ -3031,11 +3002,11 @@ file-pcapng.dissect_next_layer: TRUE
 
 # Display JSON like in browsers devtool
 # TRUE or FALSE (case-insensitive)
-json.compact_form: TRUE
+#json.compact_form: FALSE
 
 # Leading bytes will be ignored until first '[' or '{' is found.
 # TRUE or FALSE (case-insensitive)
-json.ignore_leading_bytes: TRUE
+#json.ignore_leading_bytes: FALSE
 
 # Hide extended path based filtering
 # TRUE or FALSE (case-insensitive)
@@ -5137,7 +5108,7 @@ json.ignore_leading_bytes: TRUE
 
 # Whether out-of-order segments should be buffered and reordered before passing it to a subdissector. To use this option you must also enable "Allow subdissector to reassemble TCP streams".
 # TRUE or FALSE (case-insensitive)
-tcp.reassemble_out_of_order: TRUE
+#tcp.reassemble_out_of_order: FALSE
 
 # Make the TCP dissector analyze TCP sequence numbers to find and flag segment retransmissions, missing segments and RTT
 # TRUE or FALSE (case-insensitive)
@@ -5158,7 +5129,7 @@ tcp.reassemble_out_of_order: TRUE
 
 # Evaluate BiF on actual sequence numbers or use the historical method based on payloads (default). This option has no effect if not used with "Track number of bytes in flight". 
 # TRUE or FALSE (case-insensitive)
-tcp.bif_seq_based: TRUE
+#tcp.bif_seq_based: FALSE
 
 # Calculate timestamps relative to the first frame and the previous frame in the tcp conversation
 # TRUE or FALSE (case-insensitive)
@@ -5170,7 +5141,7 @@ tcp.bif_seq_based: TRUE
 
 # Do not place the TCP Timestamps in the summary line
 # TRUE or FALSE (case-insensitive)
-tcp.ignore_tcp_timestamps: TRUE
+#tcp.ignore_tcp_timestamps: FALSE
 
 # When interpreting ambiguous packets, give precedence to Fast Retransmission or OOO 
 # TRUE or FALSE (case-insensitive)
@@ -5178,11 +5149,11 @@ tcp.ignore_tcp_timestamps: TRUE
 
 # Do not call any subdissectors for Retransmitted or OutOfOrder segments
 # TRUE or FALSE (case-insensitive)
-tcp.no_subdissector_on_error: FALSE
+#tcp.no_subdissector_on_error: TRUE
 
 # Assume TCP Experimental Options (253, 254) have an Experiment Identifier and use it for dissection
 # TRUE or FALSE (case-insensitive)
-tcp.dissect_experimental_options_rfc6994: FALSE
+#tcp.dissect_experimental_options_rfc6994: TRUE
 
 # Collect and store process information retrieved from IPFIX dissector
 # TRUE or FALSE (case-insensitive)
@@ -5751,4 +5722,4 @@ tcp.dissect_experimental_options_rfc6994: FALSE
 
 # When selected, the full name (including menu path) of the stats_tree plug-in is show in windows. If cleared the plug-in name is shown without menu path (only the part of the name after last '/' character.)
 # TRUE or FALSE (case-insensitive)
-statistics.st_sort_showfullname: TRUE
+#statistics.st_sort_showfullname: FALSE

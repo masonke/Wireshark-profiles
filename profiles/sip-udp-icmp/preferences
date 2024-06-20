@@ -1,4 +1,4 @@
-# Configuration file for Wireshark 4.0.1.
+# Configuration file for Wireshark 4.0.5.
 #
 # This file is regenerated each time preferences are saved within
 # Wireshark. Making manual changes should be safe, however.
@@ -252,7 +252,7 @@ gui.inactive_frame.style: GRADIENT
 
 # Packet list hidden columns
 # List all columns to hide in the packet list.
-gui.column.hidden: %Cus:vlan.id:0:R,%Cus:tcp.time_delta||udp.time_delta:0:R,%hs,%hd,%Cus:tls.record.length:0:R,%Cus:tcp.seq_raw:0:R,%Cus:ip.ttl:0:R,%Cus:tcp.seq:0:R,%Cus:tcp.nxtseq:0:R,%Cus:tcp.ack:0:R,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:dns.qry.name:0:R,%Cus:tcp.options.sack.count:0:R,%Cus:tcp.options.sack.dsack:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:tcp.analysis.duplicate_ack_frame:0:R,%Cus:tcp.completeness:0:R,%Cus:icmp.redir_gw:0:R,%Cus:icmp.resptime:0:R,%Cus:rtp.setup-frame:0:R,%Cus:ip.flags.df:0:R,%Cus:ip.flags:0:R,%Cus:ip.frag_offset:0:R
+gui.column.hidden: %Cus:vlan.id:0:R,%Cus:tcp.time_delta||udp.time_delta:0:R,%hs,%hd,%Cus:ip.id:0:R,%Cus:tls.record.length:0:R,%Cus:tcp.seq_raw:0:R,%Cus:tcp.stream||udp.stream:0:R,%Cus:ip.ttl:0:R,%Cus:tcp.seq:0:R,%Cus:tcp.nxtseq:0:R,%Cus:tcp.ack:0:R,%Cus:tcp.analysis.acks_frame:0:R,%Cus:tcp.analysis.ack_rtt:0:R,%Cus:tcp.analysis.bytes_in_flight:0:R,%Cus:dns.qry.name:0:R,%Cus:tcp.options.sack.count:0:R,%Cus:tcp.options.sack.dsack:0:R,%Cus:tcp.analysis.push_bytes_sent:0:R,%Cus:tcp.analysis.duplicate_ack_frame:0:R,%Cus:tcp.completeness:0:R,%Cus:icmp.redir_gw:0:R,%Cus:icmp.resptime:0:R,%Cus:rtp.setup-frame:0:R,%Cus:ip.flags.df:0:R,%Cus:ip.flags:0:R,%Cus:ip.frag_offset:0:R,%Cus:nstrace.devno:0:R
 
 # Packet list column format
 # Each pair of strings consists of a column title and its format
@@ -274,6 +274,7 @@ gui.column.format:
 	"L4 Strm#", "%Cus:tcp.stream||udp.stream:0:R",
 	"TTL", "%Cus:ip.ttl:0:R",
 	"Seq", "%Cus:tcp.seq:0:R",
+	"Stream index", "%Cus:tcp.stream:0:R",
 	"L4Len", "%Cus:tcp.len||udp.length:0:R",
 	"Next Seq", "%Cus:tcp.nxtseq:0:R",
 	"Ack", "%Cus:tcp.ack:0:R",
@@ -296,13 +297,14 @@ gui.column.format:
 	"Frag Offset", "%Cus:ip.frag_offset:0:R",
 	"DevNo", "%Cus:nstrace.devno:0:R",
 	"TCP Flags", "%Cus:tcp.flags.str:0:R",
+	"data", "%Cus:snmp.data:0:R",
 	"Info", "%i"
 
 ####### User Interface: Font ########
 
 # Font name for packet list, protocol tree, and hex dump panes. (Qt)
 # A string
-gui.qt.font_name: Inconsolata Nerd Font,16,-1,5,57,0,0,0,0,0,Medium
+gui.qt.font_name: SF Mono,13,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Medium
 
 ####### User Interface: Layout ########
 
@@ -535,7 +537,7 @@ capture.auto_scroll: FALSE
 
 # Remote SSH server username
 # A string
-#extcap.ciscodump.remoteusername: f8sz4ay
+#extcap.ciscodump.remoteusername: kem
 
 # Remote SSH server password
 # Password (never stored on disk)
@@ -555,7 +557,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.ciscodump.remotefilter: deny tcp host fc00::6440:1 any eq 22, deny tcp any eq 22 host fc00::6440:1, deny tcp host fe80::8ae9:feff:fe78:d393 any eq 22, deny tcp any eq 22 host fe80::8ae9:feff:fe78:d393, deny tcp host 100.64.0.1 any eq 22, deny tcp any eq 22 host 100.64.0.1, deny tcp host fe80::aede:48ff:fe00:1122 any eq 22, deny tcp any eq 22 host fe80::aede:48ff:fe00:1122, deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::10e8:cff5:f4d6:2467 any eq 22, deny tcp any eq 22 host fe80::10e8:cff5:f4d6:2467, deny tcp host fe80::72e6:e232:518e:3bc1 any eq 22, deny tcp any eq 22 host fe80::72e6:e232:518e:3bc1, deny tcp host fe80::c63:ffff:fe1a:39bd any eq 22, deny tcp any eq 22 host fe80::c63:ffff:fe1a:39bd, deny tcp host fe80::c63:ffff:fe1a:39bd any eq 22, deny tcp any eq 22 host fe80::c63:ffff:fe1a:39bd, deny tcp host 2600:8805:4a00:4d5::1788 any eq 22, deny tcp any eq 22 host 2600:8805:4a00:4d5::1788, deny tcp host 2600:8805:4a00:4d5:5b7:3ab8:c7cc:f51a any eq 22, deny tcp any eq 22 host 2600:8805:4a00:4d5:5b7:3ab8:c7cc:f51a, deny tcp host 2600:8805:4a00:4d5:10f0:dca6:8dde:a8ef any eq 22, deny tcp any eq 22 host 2600:8805:4a00:4d5:10f0:dca6:8dde:a8ef, deny tcp host 192.168.132.120 any eq 22, deny tcp any eq 22 host 192.168.132.120, deny tcp host fe80::c91:a61b:e3a4:d518 any eq 22, deny tcp any eq 22 host fe80::c91:a61b:e3a4:d518, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
+#extcap.ciscodump.remotefilter: deny tcp host fe80::8e70:fd78:575c:e776 any eq 22, deny tcp any eq 22 host fe80::8e70:fd78:575c:e776, deny tcp host fe80::ce81:b1c:bd2c:69e any eq 22, deny tcp any eq 22 host fe80::ce81:b1c:bd2c:69e, deny tcp host fe80::2795:dd1a:49f:e86a any eq 22, deny tcp any eq 22 host fe80::2795:dd1a:49f:e86a, deny tcp host fe80::aab5:fea9:59a8:18e3 any eq 22, deny tcp any eq 22 host fe80::aab5:fea9:59a8:18e3, deny tcp host fe80::fcbf:11ff:fefc:3430 any eq 22, deny tcp any eq 22 host fe80::fcbf:11ff:fefc:3430, deny tcp host 192.168.4.15 any eq 22, deny tcp any eq 22 host 192.168.4.15, deny tcp host fe80::cfe:5d4f:539:d66 any eq 22, deny tcp any eq 22 host fe80::cfe:5d4f:539:d66, deny tcp host fe80::fcbf:11ff:fefc:3430 any eq 22, deny tcp any eq 22 host fe80::fcbf:11ff:fefc:3430, deny tcp host fe80::1cfc:27dc:7e7e:a41f any eq 22, deny tcp any eq 22 host fe80::1cfc:27dc:7e7e:a41f, deny tcp host 192.168.139.15 any eq 22, deny tcp any eq 22 host 192.168.139.15, deny tcp host fe80::7ce9:1eff:febf:873 any eq 22, deny tcp any eq 22 host fe80::7ce9:1eff:febf:873, deny tcp host fe80::4ce5:8aff:fede:a902 any eq 22, deny tcp any eq 22 host fe80::4ce5:8aff:fede:a902, deny tcp host fe80::4ce5:8aff:fede:a904 any eq 22, deny tcp any eq 22 host fe80::4ce5:8aff:fede:a904, deny tcp host fe80::4ce5:8aff:fede:a903 any eq 22, deny tcp any eq 22 host fe80::4ce5:8aff:fede:a903, deny tcp host fe80::1 any eq 22, deny tcp any eq 22 host fe80::1, permit ip any any
 
 # Packets to capture
 # A string
@@ -635,7 +637,7 @@ capture.auto_scroll: FALSE
 
 # Remote capture filter
 # A string
-#extcap.sshdump.remotefilter: not ((host fc00::6440:1 or host fe80::8ae9:feff:fe78:d393 or host 100.64.0.1 or host fe80::aede:48ff:fe00:1122 or host fe80::ce81:b1c:bd2c:69e or host fe80::10e8:cff5:f4d6:2467 or host fe80::72e6:e232:518e:3bc1 or host fe80::c63:ffff:fe1a:39bd or host fe80::c63:ffff:fe1a:39bd or host 2600:8805:4a00:4d5::1788 or host 2600:8805:4a00:4d5:5b7:3ab8:c7cc:f51a or host 2600:8805:4a00:4d5:10f0:dca6:8dde:a8ef or host 192.168.132.120 or host fe80::c91:a61b:e3a4:d518 or host fe80::1) and port 22)
+#extcap.sshdump.remotefilter: not ((host fe80::8e70:fd78:575c:e776 or host fe80::ce81:b1c:bd2c:69e or host fe80::2795:dd1a:49f:e86a or host fe80::aab5:fea9:59a8:18e3 or host fe80::fcbf:11ff:fefc:3430 or host 192.168.4.15 or host fe80::cfe:5d4f:539:d66 or host fe80::fcbf:11ff:fefc:3430 or host fe80::1cfc:27dc:7e7e:a41f or host 192.168.139.15 or host fe80::7ce9:1eff:febf:873 or host fe80::4ce5:8aff:fede:a902 or host fe80::4ce5:8aff:fede:a904 or host fe80::4ce5:8aff:fede:a903 or host fe80::1) and port 22)
 
 # Packets to capture
 # A string
@@ -693,11 +695,11 @@ nameres.network_name: TRUE
 
 # Resolve Object IDs to object names from the MIB and PIB modules defined below. You must restart Wireshark for this change to take effect
 # TRUE or FALSE (case-insensitive)
-#nameres.load_smi_modules: FALSE
+nameres.load_smi_modules: TRUE
 
 # While loading MIB or PIB modules errors may be detected, which are reported. Some errors can be ignored. If unsure, set to false.
 # TRUE or FALSE (case-insensitive)
-#nameres.suppress_smi_errors: FALSE
+nameres.suppress_smi_errors: TRUE
 
 ####### Protocols ########
 
@@ -1217,7 +1219,7 @@ protocols.strict_conversation_tracking_heuristics: TRUE
 #asterix.i020_version: Version 1.10 (latest)
 
 # Select the CAT021 version
-# One of: Version 2.6 (latest), Version 2.6, Version 2.5, Version 2.4
+# One of: Version 2.6 (latest), Version 2.6, Version 2.5, Version 2.4, Version 0.23
 # (case-insensitive).
 #asterix.i021_version: Version 2.6 (latest)
 
@@ -1242,9 +1244,9 @@ protocols.strict_conversation_tracking_heuristics: TRUE
 #asterix.i034_version: Version 1.29 (latest)
 
 # Select the CAT048 version
-# One of: Version 1.30 (latest), Version 1.30, Version 1.29, Version 1.28, Version 1.27
+# One of: Version 1.31 (latest), Version 1.31, Version 1.30, Version 1.29, Version 1.28, Version 1.27
 # (case-insensitive).
-#asterix.i048_version: Version 1.30 (latest)
+#asterix.i048_version: Version 1.31 (latest)
 
 # Select the CAT062 version
 # One of: Version 1.19 (latest), Version 1.19, Version 1.18, Version 1.17
@@ -1257,7 +1259,7 @@ protocols.strict_conversation_tracking_heuristics: TRUE
 #asterix.i063_version: Version 1.6 (latest)
 
 # Select the CAT065 version
-# One of: Version 1.5 (latest), Version 1.5
+# One of: Version 1.5 (latest), Version 1.5, Version 1.4
 # (case-insensitive).
 #asterix.i065_version: Version 1.5 (latest)
 
@@ -2133,6 +2135,10 @@ eth.padding: Any
 # Whether the EVRC dissector should process payload type 60 as legacy EVRC packets
 # TRUE or FALSE (case-insensitive)
 #evrc.legacy_pt_60: FALSE
+
+# Decode payload assuming that Header-Full format only is used
+# TRUE or FALSE (case-insensitive)
+#evs.hf_only: FALSE
 
 # Controls the display of the session's username in the info column.  This is only displayed if the packet containing it was seen during this capture session.
 # TRUE or FALSE (case-insensitive)
@@ -4244,6 +4250,10 @@ ipv6.exthdr_under_root_protocol_tree: TRUE
 # Specifies that the JSON text of the Protobuf message should be displayed in addition to the dissection tree
 # TRUE or FALSE (case-insensitive)
 #protobuf.display_json_mapping: FALSE
+
+# Display timestamp in UTC format
+# TRUE or FALSE (case-insensitive)
+#protobuf.use_utc: FALSE
 
 # Try to dissect all undefined length-delimited fields as string.
 # TRUE or FALSE (case-insensitive)
